@@ -1,11 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeLearn - Up Your Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen"
+  >
+    <!-- Navigation -->
+    <header class="bg-white shadow">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl font-bold text-yellow-500">Logo</span>
+          <div>
+            <input
+              type="text"
+              placeholder="What do you want?"
+              class="py-2 px-4 border rounded"
+            />
+            <select class="py-2 px-4 border rounded">
+              <option>Explore</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <nav class="space-x-4">
+            <a href="#" class="text-gray-700 hover:text-blue-500">Home</a>
+            <a href="#" class="text-gray-700 hover:text-blue-500">About Us</a>
+            <a href="#" class="text-gray-700 hover:text-blue-500">Courses</a>
+            <a href="#" class="text-gray-700 hover:text-blue-500"
+              >Consultants</a
+            >
+            <a href="#" class="text-gray-700 hover:text-blue-500">FAQs</a>
+            <button
+              class="text-gray-700 border border-gray-300 py-2 px-4 rounded"
+            >
+              Sign In
+            </button>
+          </nav>
+
+          <button class="bg-green-500 text-white py-2 px-4 rounded">
+            Create an account
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-12 lg:py-20 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <!-- Hero Content -->
+          <div class="space-y-8 lg:pr-8">
+            <div class="space-y-6">
+              <h1
+                class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+              >
+                up your <span class="text-green-500">skills</span><br />
+                to <span class="text-green-500">advance</span> your<br />
+                <span class="text-green-500">career</span> path
+              </h1>
+              <p class="text-gray-600 text-lg max-w-md leading-relaxed">
+                Learn UI-UX Design skills with worldwide UK - the latest online
+                learning system and material that help your knowledge growing.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                class="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-full font-semibold hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg"
+              >
+                Get Started
+              </button>
+              <button
+                class="border-2 border-green-500 text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-green-50 transition-all"
+              >
+                Get free trial
+              </button>
+            </div>
+
+            <!-- Skills Icons -->
+            <div class="flex flex-wrap items-center gap-6 pt-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-lightbulb text-yellow-600 text-lg"></i>
+                </div>
+                <span class="text-sm text-gray-600 font-medium"
+                  >Public Speaking</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-briefcase text-red-600 text-lg"></i>
+                </div>
+                <span class="text-sm text-gray-600 font-medium"
+                  >Career Oriented</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-brain text-purple-600 text-lg"></i>
+                </div>
+                <span class="text-sm text-gray-600 font-medium"
+                  >Creative Thinking</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="relative flex justify-center lg:justify-end">
+            <div class="relative">
+              <!-- Main circular background -->
+              <div
+                class="w-80 h-80 lg:w-96 lg:h-96 hero-circle rounded-full relative shadow-2xl animate-float"
+              >
+                <!-- Student figure -->
+                <div
+                  class="absolute inset-0 flex items-end justify-center pb-8"
+                >
+                  <div class="relative">
+                    <!-- Person silhouette -->
+                    <div
+                      class="w-40 h-52 student-silhouette rounded-t-full relative overflow-hidden"
+                    >
+                      <!-- Head -->
+                      <div
+                        class="absolute top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-orange-300 rounded-full"
+                      ></div>
+                      <!-- Hair -->
+                      <div
+                        class="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-10 bg-orange-400 rounded-full"
+                      ></div>
+                      <!-- Body -->
+                      <div
+                        class="absolute top-16 left-1/2 transform -translate-x-1/2 w-20 h-28 bg-blue-400 rounded-t-2xl"
+                      ></div>
+                      <!-- Arm with folder -->
+                      <div
+                        class="absolute top-24 right-8 w-6 h-16 bg-orange-300 rounded-full transform rotate-12"
+                      ></div>
+                      <div
+                        class="absolute top-20 right-4 w-8 h-12 bg-orange-500 rounded transform rotate-12"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating stats cards -->
+              <div
+                class="absolute -top-6 -right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl animate-float"
+                style="animation-delay: -1s"
+              >
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-500">5K+</div>
+                  <div class="text-xs text-gray-600">Online Courses</div>
+                </div>
+              </div>
+
+              <div
+                class="absolute top-16 -left-12 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl animate-float"
+                style="animation-delay: -2s"
+              >
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center"
+                  >
+                    <i class="fas fa-play text-green-600"></i>
+                  </div>
+                  <div>
+                    <div class="text-lg font-bold text-gray-900">2K+</div>
+                    <div class="text-xs text-gray-600">Video Courses</div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="absolute bottom-8 -right-10 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl animate-float"
+                style="animation-delay: -3s"
+              >
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
+                  >
+                    <i class="fas fa-certificate text-blue-600"></i>
+                  </div>
+                  <div>
+                    <div class="text-lg font-bold text-gray-900">250+</div>
+                    <div class="text-xs text-gray-600">Certified</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-12 bg-white/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <div class="flex items-center justify-center space-x-2 mb-4">
+            <span class="text-2xl font-bold text-green-500">250+</span>
+            <span class="text-gray-600">Collaboration</span>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60"
+        >
+          <div class="text-center">
+            <div class="text-2xl font-bold text-gray-400">duolingo</div>
+          </div>
+          <div class="text-center">
+            <div class="flex items-center justify-center space-x-2">
+              <i class="fas fa-code text-gray-400"></i>
+              <span class="text-xl font-semibold text-gray-400">Codecov</span>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="flex items-center justify-center space-x-2">
+              <span class="text-xl font-semibold text-gray-400"
+                >UserTesting</span
+              >
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="flex items-center justify-center space-x-2">
+              <i class="fas fa-hat-wizard text-gray-400"></i>
+              <span class="text-xl font-semibold text-gray-400"
+                >magic leap</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-green-500 text-lg font-semibold mb-2">
+            Our Services
+          </h2>
+          <h3
+            class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight"
+          >
+            Fostering a playful & engaging learning<br />
+            environment
+          </h3>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Interaction Design -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+            <div
+              class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-mouse-pointer text-purple-600 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-4">
+              Interaction Design
+            </h4>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Lessons on design that cover the most recent developments.
+            </p>
+            <a
+              href="#"
+              class="text-green-500 font-semibold hover:text-green-600 transition-colors inline-flex items-center"
+            >
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+
+          <!-- UX Design Course -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+            <div
+              class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-palette text-green-600 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-4">
+              UX Design Course
+            </h4>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Classes in development that cover the most recent advancements in
+              web.
+            </p>
+            <a
+              href="#"
+              class="text-green-500 font-semibold hover:text-green-600 transition-colors inline-flex items-center"
+            >
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+
+          <!-- User Interface Design -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+            <div
+              class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-desktop text-orange-600 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-4">
+              User Interface Design
+            </h4>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              User Interface Design courses that cover the most recent trends.
+            </p>
+            <a
+              href="#"
+              class="text-green-500 font-semibold hover:text-green-600 transition-colors inline-flex items-center"
+            >
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Progress indicators -->
+        <div class="flex justify-center mt-12 space-x-2">
+          <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+          <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
 </html>
