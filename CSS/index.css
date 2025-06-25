@@ -2,6 +2,9 @@
 body {
   font-family: "Inter", sans-serif;
 }
+.custom-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 .hero-circle {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   position: relative;

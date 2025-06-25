@@ -1,3 +1,9 @@
+//navbar
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("mobile-menu");
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 
