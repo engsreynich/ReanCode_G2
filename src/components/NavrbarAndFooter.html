@@ -3,290 +3,447 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Demo</title>
-    <link rel="stylesheet" href="../input.css" />
-    <link rel="stylesheet" href="../output.css" />
-    <!-- Tiny extra style just for soft shadow -->
+    <title>ReanCode - Learn & Create</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              float: "float 3s ease-in-out infinite",
+              gradient: "gradient 3s linear infinite",
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              gradient: {
+                "0%": { "background-position": "0% center" },
+                "100%": { "background-position": "200% center" },
+              },
+            },
+          },
+        },
+      };
+    </script>
     <style>
       .custom-shadow {
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
     </style>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col bg-gray-50">
     <!-- ============ HEADER ============ -->
-    <header class="sticky top-0 z-50 bg-white shadow">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
       <div class="max-w-7xl mx-auto flex items-center px-4 py-3">
-        <!-- Logo + search -->
-        <div class="flex flex-1 items-center gap-4">
-          <span class="text-2xl font-bold text-yellow-500">Logo</span>
-
-          <!-- SEARCH (takes full width but shrinks nicely) -->
-          <div class="relative flex-1 max-w-lg">
-            <div
-              class="flex items-center bg-white border border-gray-200 rounded-2xl custom-shadow"
-            >
-              <!-- icon -->
-              <i class="fa fa-search text-gray-400 mx-4 shrink-0"></i>
-
-              <!-- input -->
-              <input
-                type="text"
-                placeholder="Want to learn?"
-                class="flex-1 bg-transparent text-sm sm:text-base placeholder-gray-400 focus:outline-none"
-              />
-
-              <!-- explore dropdown trigger -->
-              <button
-                id="dropBtn"
-                class="flex items-center gap-1 px-4 py-3 text-teal-500 font-medium border-l border-gray-100"
-              >
-                <span class="hidden sm:inline">Explore</span>
-                <i
-                  id="dropIcon"
-                  class="fa fa-chevron-down transition-transform"
-                ></i>
-              </button>
-            </div>
-
-            <!-- drop menu -->
-            <nav
-              id="dropMenu"
-              class="absolute right-0 mt-2 w-44 sm:w-48 bg-white border border-gray-200 rounded-xl shadow-lg py-2 opacity-0 invisible transition-all duration-150"
-            >
-              <a href="#" class="block px-4 py-3 hover:bg-gray-50"
-                >All Categories</a
-              >
-              <a href="#" class="block px-4 py-3 hover:bg-gray-50"
-                >Technology</a
-              >
-              <a href="#" class="block px-4 py-3 hover:bg-gray-50">Business</a>
-              <a href="#" class="block px-4 py-3 hover:bg-gray-50">Design</a>
-              <a href="#" class="block px-4 py-3 hover:bg-gray-50">Marketing</a>
-              <a href="#" class="block px-4 py-3 hover:bg-gray-50"
-                >Health &amp; Fitness</a
-              >
-              <a href="#" class="block px-4 py-3 hover:bg-gray-50"
-                >Photography</a
-              >
-              <a href="#" class="block px-4 py-3 hover:bg-gray-50">Music</a>
-            </nav>
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mr-8">
+          <div
+            class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse-slow"
+          >
+            <i class="fas fa-code text-white"></i>
           </div>
+          <span class="text-2xl font-bold">
+            <span
+              class="bg-gradient-to-r from-green-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-[length:200%] animate-gradient"
+              >Rean</span
+            ><span class="text-gray-800">Code</span>
+          </span>
         </div>
 
-        <!-- DESKTOP NAV -->
-        <nav class="hidden lg:flex items-center gap-4 ml-6">
-          <a href="#" class="hover:text-teal-600">Home</a>
-          <a href="#" class="hover:text-teal-600">About&nbsp;Us</a>
-          <a href="#" class="hover:text-teal-600">Courses</a>
-          <a href="#" class="hover:text-teal-600">Consultants</a>
-          <a href="#" class="hover:text-teal-600">FAQs</a>
+        <!-- Search Bar -->
+        <div class="relative flex-1 max-w-lg">
+          <div
+            class="flex items-center bg-white border border-gray-200 rounded-2xl custom-shadow"
+          >
+            <i class="fa fa-search text-gray-400 mx-4"></i>
+            <input
+              type="text"
+              placeholder="Want to learn?"
+              class="flex-1 bg-transparent text-sm sm:text-base placeholder-gray-400 focus:outline-none py-3"
+            />
+            <button
+              id="dropBtn"
+              class="flex items-center gap-1 px-4 py-3 text-teal-500 font-medium border-l border-gray-100 hover:bg-gray-50 transition-colors"
+            >
+              <span class="hidden sm:inline">Explore</span>
+              <i
+                id="dropIcon"
+                class="fa fa-chevron-down transition-transform duration-200"
+              ></i>
+            </button>
+          </div>
+
+          <!-- Dropdown Menu -->
+          <nav
+            id="dropMenu"
+            class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-xl shadow-lg py-2 opacity-0 invisible transition-all duration-200 transform scale-95"
+          >
+            <a
+              href="#"
+              class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >All Categories</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >Technology</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >Business</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >Design</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >Marketing</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >Health & Fitness</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >Photography</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >Music</a
+            >
+          </nav>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-6 ml-8">
+          <a href="#" class="hover:text-teal-600 transition-colors">Home</a>
+          <a href="#" class="hover:text-teal-600 transition-colors">About Us</a>
+          <a href="#" class="hover:text-teal-600 transition-colors">Courses</a>
+          <a href="#" class="hover:text-teal-600 transition-colors"
+            >Consultants</a
+          >
+          <a href="#" class="hover:text-teal-600 transition-colors">FAQs</a>
 
           <button
-            class="border border-gray-300 rounded py-2 px-4 hover:bg-gray-50"
+            class="border border-gray-300 rounded-lg py-2 px-4 hover:bg-gray-50 transition-colors"
           >
-            Sign&nbsp;In
+            Sign In
           </button>
           <button
-            class="bg-green-500 hover:bg-green-600 text-white rounded py-2 px-4"
+            class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-2 px-4 transition-all duration-200 transform hover:scale-105"
           >
-            Create&nbsp;account
+            Create Account
           </button>
         </nav>
 
-        <!-- HAMBURGER -->
-        <button id="menuBtn" class="lg:hidden ml-4 text-2xl text-gray-700">
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuBtn"
+          class="lg:hidden ml-4 text-2xl text-gray-700 hover:text-gray-900 transition-colors"
+        >
           <i class="fa fa-bars"></i>
         </button>
       </div>
 
-      <!-- MOBILE MENU -->
+      <!-- Mobile Menu -->
       <div
         id="mobileMenu"
-        class="lg:hidden max-h-0 overflow-hidden transition-all duration-200 border-t border-gray-100"
+        class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 border-t border-gray-100"
       >
         <nav class="flex flex-col px-4 pb-4 space-y-2">
-          <a href="#" class="py-2 hover:text-teal-600">Home</a>
-          <a href="#" class="py-2 hover:text-teal-600">About&nbsp;Us</a>
-          <a href="#" class="py-2 hover:text-teal-600">Courses</a>
-          <a href="#" class="py-2 hover:text-teal-600">Consultants</a>
-          <a href="#" class="py-2 hover:text-teal-600">FAQs</a>
-          <button
-            class="w-full border border-gray-300 rounded py-2 hover:bg-gray-50"
+          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+            >Home</a
           >
-            Sign&nbsp;In
+          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+            >About Us</a
+          >
+          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+            >Courses</a
+          >
+          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+            >Consultants</a
+          >
+          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+            >FAQs</a
+          >
+          <button
+            class="w-full border border-gray-300 rounded-lg py-3 mt-2 hover:bg-gray-50 transition-colors"
+          >
+            Sign In
           </button>
           <button
-            class="w-full bg-green-500 hover:bg-green-600 text-white rounded py-2"
+            class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200"
           >
-            Create&nbsp;account
+            Create Account
           </button>
         </nav>
       </div>
     </header>
 
-    <!-- ============ MAIN (placeholder) ============ -->
+    <!-- ============ HERO SECTION ============ -->
     <main class="flex-1"></main>
 
     <!-- ============ FOOTER ============ -->
     <footer class="bg-gray-900 text-gray-400">
-      <div class="max-w-7xl mx-auto px-8 py-12">
+      <div class="max-w-7xl mx-auto px-8 py-16">
         <div class="flex flex-col lg:flex-row justify-between gap-12">
           <!-- Logo/Tagline -->
-          <div class="space-y-4">
+          <div class="space-y-6">
             <div class="flex items-center gap-3">
               <div
-                class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center"
+                class="w-12 h-12 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center"
               >
-                <i class="fa fa-bolt text-white"></i>
+                <i class="fas fa-code text-white text-xl"></i>
               </div>
-              <span class="text-white text-2xl font-bold">Ex-Circle</span>
+              <span class="text-white text-2xl font-bold">ReanCode</span>
             </div>
-            <p class="max-w-xs text-sm leading-relaxed">
-              Top earning experiences that create more talent in this world.
+            <p class="max-w-sm text-sm leading-relaxed">
+              Empowering the next generation of developers through innovative
+              education and hands-on learning experiences.
             </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="fab fa-twitter text-sm"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="fab fa-linkedin-in text-sm"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="fab fa-github text-sm"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="fab fa-youtube text-sm"></i>
+              </a>
+            </div>
           </div>
 
           <!-- Links -->
-          <div
-            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 flex-1"
-          >
-            <!-- Column component (re-usable) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1">
             <div>
               <h3
-                class="text-white font-semibold mb-4 text-sm uppercase tracking-wider"
+                class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
               >
-                Product
+                Courses
               </h3>
               <ul class="space-y-3">
-                <li><a href="#" class="hover:text-white">Overview</a></li>
-                <li><a href="#" class="hover:text-white">Features</a></li>
-                <li><a href="#" class="hover:text-white">Solutions</a></li>
-                <li><a href="#" class="hover:text-white">Tutorials</a></li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Web Development</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Mobile Apps</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Data Science</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >DevOps</a
+                  >
+                </li>
               </ul>
             </div>
 
             <div>
               <h3
-                class="text-white font-semibold mb-4 text-sm uppercase tracking-wider"
+                class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
               >
                 Company
               </h3>
               <ul class="space-y-3">
-                <li><a href="#" class="hover:text-white">About us</a></li>
-                <li><a href="#" class="hover:text-white">Careers</a></li>
                 <li>
-                  <a href="#" class="hover:text-white flex items-center gap-2">
-                    Press
-                    <span
-                      class="text-xs bg-pink-600 text-white px-1.5 py-0.5 rounded-full animate-bounce"
-                      >New</span
-                    >
-                  </a>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >About Us</a
+                  >
                 </li>
-                <li><a href="#" class="hover:text-white">News</a></li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >News</a
+                  >
+                </li>
               </ul>
             </div>
 
             <div>
               <h3
-                class="text-white font-semibold mb-4 text-sm uppercase tracking-wider"
+                class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
               >
-                Social
+                Support
               </h3>
               <ul class="space-y-3">
-                <li><a href="#" class="hover:text-white">Twitter</a></li>
-                <li><a href="#" class="hover:text-white">LinkedIn</a></li>
-                <li><a href="#" class="hover:text-white">GitHub</a></li>
-                <li><a href="#" class="hover:text-white">Dribbble</a></li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Community</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >FAQs</a
+                  >
+                </li>
               </ul>
             </div>
 
             <div>
               <h3
-                class="text-white font-semibold mb-4 text-sm uppercase tracking-wider"
+                class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
               >
                 Legal
               </h3>
               <ul class="space-y-3">
-                <li><a href="#" class="hover:text-white">Terms</a></li>
-                <li><a href="#" class="hover:text-white">Privacy</a></li>
-                <li><a href="#" class="hover:text-white">Cookies</a></li>
-                <li><a href="#" class="hover:text-white">Contact</a></li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Cookie Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >GDPR</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="bg-gray-800">
+      <div class="bg-gray-800 border-t border-gray-700">
         <div
           class="max-w-7xl mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          <p class="text-xs">
-            &copy; 2024&nbsp;Ex-Circle. All rights reserved.
+          <p class="text-sm">© 2024 ReanCode. All rights reserved.</p>
+          <p class="text-sm text-gray-500">
+            Made with ❤️ for developers worldwide
           </p>
-
-          <!-- Social icons -->
-          <div class="flex gap-4">
-            <a
-              href="#"
-              class="w-8 h-8 grid place-items-center rounded-full bg-gray-700 hover:bg-emerald-500 transition"
-              ><i class="fa-brands fa-x-twitter text-xs"></i
-            ></a>
-            <a
-              href="#"
-              class="w-8 h-8 grid place-items-center rounded-full bg-gray-700 hover:bg-emerald-500 transition"
-              ><i class="fa-brands fa-linkedin-in text-xs"></i
-            ></a>
-            <a
-              href="#"
-              class="w-8 h-8 grid place-items-center rounded-full bg-gray-700 hover:bg-emerald-500 transition"
-              ><i class="fa-brands fa-facebook-f text-xs"></i
-            ></a>
-            <a
-              href="#"
-              class="w-8 h-8 grid place-items-center rounded-full bg-gray-700 hover:bg-emerald-500 transition"
-              ><i class="fa-brands fa-github text-xs"></i
-            ></a>
-          </div>
         </div>
       </div>
     </footer>
 
     <!-- ============ SCRIPTS ============ -->
     <script>
-      // MOBILE MENU
+      // Mobile Menu Toggle
       const menuBtn = document.getElementById("menuBtn");
-      const mobile = document.getElementById("mobileMenu");
+      const mobileMenu = document.getElementById("mobileMenu");
+
       menuBtn.addEventListener("click", () => {
-        const open = mobile.style.maxHeight && mobile.style.maxHeight !== "0px";
-        mobile.style.maxHeight = open ? "0px" : mobile.scrollHeight + "px";
-        menuBtn.firstElementChild.classList.toggle("fa-bars");
-        menuBtn.firstElementChild.classList.toggle("fa-times");
+        const isOpen =
+          mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px";
+
+        if (isOpen) {
+          mobileMenu.style.maxHeight = "0px";
+          menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
+        } else {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          menuBtn.innerHTML = '<i class="fa fa-times"></i>';
+        }
       });
 
-      // EXPLORE DROPDOWN
+      // Dropdown Menu
       const dropBtn = document.getElementById("dropBtn");
       const dropIcon = document.getElementById("dropIcon");
-      const dropNav = document.getElementById("dropMenu");
+      const dropMenu = document.getElementById("dropMenu");
 
       dropBtn.addEventListener("click", (e) => {
         e.stopPropagation();
-        const open = dropNav.classList.contains("opacity-100");
-        dropNav.classList.toggle("opacity-0", open);
-        dropNav.classList.toggle("invisible", open);
-        dropNav.classList.toggle("opacity-100", !open);
-        dropNav.classList.toggle("visible", !open);
-        dropIcon.classList.toggle("rotate-180");
+        const isOpen = dropMenu.classList.contains("opacity-100");
+
+        if (isOpen) {
+          dropMenu.classList.remove("opacity-100", "visible", "scale-100");
+          dropMenu.classList.add("opacity-0", "invisible", "scale-95");
+          dropIcon.classList.remove("rotate-180");
+        } else {
+          dropMenu.classList.remove("opacity-0", "invisible", "scale-95");
+          dropMenu.classList.add("opacity-100", "visible", "scale-100");
+          dropIcon.classList.add("rotate-180");
+        }
       });
-      // close on click outside
+
+      // Close dropdown when clicking outside
       document.addEventListener("click", () => {
-        dropNav.classList.add("opacity-0", "invisible");
-        dropNav.classList.remove("opacity-100", "visible");
+        dropMenu.classList.remove("opacity-100", "visible", "scale-100");
+        dropMenu.classList.add("opacity-0", "invisible", "scale-95");
         dropIcon.classList.remove("rotate-180");
       });
-      dropNav.addEventListener("click", (e) => e.stopPropagation());
+
+      // Prevent dropdown from closing when clicked inside
+      dropMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
     </script>
   </body>
 </html>
