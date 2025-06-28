@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course</title>
-    <link rel="stylesheet" href="../output.css" />
+    <link rel="stylesheet" href="../output.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -352,12 +352,13 @@
         const courses = [
           {
             id: 1,
-            title: "Standard Five",
+            title: "Mastering HTML5",
             category: "HTML",
+            image: "../assets/images/courseImg1.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
-            rating: 4.8,
-            reviews: 324,
+              "Master HTML and Its Latest Features – From Basics to Advanced for Web Design and Front End Web Development.",
+            rating: 4.4,
+            reviews: 386,
             badge: "FREE",
             badgeColor: "bg-green-500",
           },
@@ -365,6 +366,7 @@
             id: 2,
             title: "Standard Five",
             category: "English",
+            image: "../assets/images/courseImg1.jpg",
             description:
               "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
             rating: 4.9,
@@ -523,14 +525,9 @@
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
                     <div class="relative">
                         <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center group-hover:from-purple-500 group-hover:to-purple-700 transition-all duration-300">
-                            <div class="text-center text-white">
-                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-opacity-30 transition-all duration-300">
-                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-sm font-medium opacity-90">Learning Platform</div>
-                            </div>
+                            <figure class="text-center text-white">
+                              <img src="${course.image}"
+                            </figure>
                         </div>
                         <div class="absolute top-3 right-3">
                             <span class="${
