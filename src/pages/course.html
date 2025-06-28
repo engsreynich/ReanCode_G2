@@ -4,13 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ReanCode - Learn & Create</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="../input.css" />
     <link rel="stylesheet" href="../output.css" />
-=======
-    <link rel="stylesheet" href="../output.css">
-    <link rel="stylesheet" href="../input.css">
->>>>>>> 985e2730eb46f662813dafb64498218ab42e317c
+    <link rel="stylesheet" href="../input.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -173,21 +168,38 @@
         class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 border-t border-gray-100"
       >
         <nav class="flex flex-col px-4 pb-4 space-y-2">
-          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+          <a
+            href="/index.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Home</a
           >
-          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+          <a
+            href="/index.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >About Us</a
           >
-          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+          <a
+            href="./Course.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Courses</a
           >
-          <a href="#" class="py-3 hover:text-teal-600 transition-colors"
+          <a
+            href="./Contact.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Contact</a
           >
 
+          <!-- Mobile Dark Mode Toggle -->
           <button
-            class="w-full border border-gray-300 rounded-lg py-3 mt-2 hover:bg-gray-50 transition-colors"
+            id="mobileThemeToggle"
+            class="flex items-center gap-3 py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+          >
+            <i id="mobileThemeIcon" class="fas fa-moon"></i>
+            <span id="mobileThemeText">Dark Mode</span>
+          </button>
+
+          <button
+            class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
             Sign In
           </button>
