@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ReanCode - Learn how to code with interactive lessons and real projects.">
+    <meta name="keywords" content="coding, learn, programming, web development, coding platform">
+    <meta name="author" content="ReanCode">
+    <title>ReanCode - Learn & Create the Future</title>
+<<<<<<< HEAD:index.html
+    <link rel="stylesheet" href="./src/input.css">
+    <link rel="stylesheet" href="./src/output.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  -->
+=======
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+>>>>>>> 78f58636ce62f1ce886250481cb1f14c694dcf2e:src/pages/about.html
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'gradient': 'gradient 3s linear infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'sparkle': 'sparkle 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        gradient: {
+                            '0%': { 'background-position': '0% center' },
+                            '100%': { 'background-position': '200% center' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(168, 85, 247, 0.4)' },
+                            '100%': { boxShadow: '0 0 40px rgba(168, 85, 247, 0.8)' },
+                        },
+                        typing: {
+                            'from': { width: '0' },
+                            'to': { width: '100%' }
+                        },
+                        'blink-caret': {
+                            'from, to': { borderColor: 'transparent' },
+                            '50%': { borderColor: '#10b981' }
+                        },
+                        slideUp: {
+                            'from': { transform: 'translateY(30px)', opacity: '0' },
+                            'to': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        fadeIn: {
+                            'from': { opacity: '0' },
+                            'to': { opacity: '1' }
+                        },
+                        sparkle: {
+                            '0%': { transform: 'scale(0) rotate(0deg)', opacity: '1' },
+                            '50%': { transform: 'scale(1) rotate(180deg)', opacity: '1' },
+                            '100%': { transform: 'scale(0) rotate(360deg)', opacity: '0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>  
+        .theme-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #10b981, #8b5cf6, #10b981);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s linear infinite;
+        }
+
+        .dark {
+            color-scheme: dark;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .code-window {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fbbf24;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 0.6s ease-out forwards;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Apply animation with Tailwind's utility classes */
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #10b981, #8b5cf6);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 theme-transition">
+    <!-- Scroll Progress Indicator -->
+    <div id="scrollProgress" class="scroll-indicator"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg theme-transition">
+        <div class="max-w-7xl mx-auto flex items-center px-4 py-3">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 mr-8">
+                <a class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse"
+                    href="index.html">
+                    <i class="fas fa-code text-white"></i>
+                </a>
+                <a class="text-2xl font-bold"
+                    href="index.html">
+                    <span class="gradient-text">Rean</span>
+                    <span class="text-gray-800 dark:text-white theme-transition">Code</span>
+                </a>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="relative flex-1 max-w-lg">
+                <div class="flex items-center bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-2xl shadow-sm theme-transition">
+                    <i class="fas fa-search text-gray-400 dark:text-gray-300 mx-4"></i>
+                    <input
+                        type="text"
+                        placeholder="Want to learn?"
+                        class="flex-1 bg-transparent text-sm sm:text-base placeholder-gray-400 dark:placeholder-gray-300 dark:text-white focus:outline-none py-3 theme-transition"
+                    />
+                    <button
+                        id="dropdownBtn"
+                        class="flex items-center gap-1 px-4 py-3 text-teal-500 dark:text-teal-400 font-medium border-l border-gray-100 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+                    >
+                        <a href="src/pages/course.html" class="hidden sm:inline">Explore</a>
+                        <i id="dropdownIcon" class="fas fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                </div>
+
+                <!-- Dropdown Menu -->
+                <nav id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg py-2 z-10 opacity-0 invisible transition-all duration-200 transform scale-95 theme-transition">
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">All Categories</a>
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">Technology</a>
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">Business</a>
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">Design</a>
+                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">Marketing</a>
+                </nav>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-6 ml-8">
+                <a href="#home" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">About Us</a>
+                <a href="#courses" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Courses</a>
+                <a href="#contact" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Contact</a>
+                
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Toggle theme">
+                    <i id="themeIcon" class="fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300"></i>
+                </button>
+                
+                <button class="border border-gray-300 dark:border-gray-600 dark:text-white rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors theme-transition">
+                    Sign In
+                </button>
+                <button class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-2 px-4 transition-all duration-200 transform hover:scale-105">
+                    Create Account
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Button & Theme Toggle -->
+            <div class="flex items-center gap-2 lg:hidden ml-4">
+                <button id="mobileThemeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Toggle theme">
+                    <i id="mobileThemeIcon" class="fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300"></i>
+                </button>
+                <button id="menuBtn" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 theme-transition">
+            <nav class="flex flex-col px-4 pb-4 space-y-2">
+                <a href="#home" class="py-3 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Home</a>
+                <a href="#about" class="py-3 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">About Us</a>
+                <a href="#courses" class="py-3 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Courses</a>
+                <a href="#contact" class="py-3 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Contact</a>
+                <button class="w-full border border-gray-300 dark:border-gray-600 dark:text-white rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors theme-transition">
+                    Sign In
+                </button>
+                <button class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200">
+                    Create Account
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white py-20 lg:py-32 relative overflow-hidden">
+            <!-- Floating Particles -->
+            <div id="heroParticles" class="absolute inset-0 pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <!-- Left Content -->
+                    <div class="lg:w-1/2 space-y-8 animate-slide-up">
+                        <div class="space-y-4">
+                            <div class="slide-in-left">
+                                <h1 class="text-4xl lg:text-6xl font-bold leading-tight text-white" data-animate="slide-left">
+                                    About Us
+                                    <span class="block text-yellow-300 animate-pulse">Welcome to ReanCode</span>
+                                </h1>
+                            </div>
+                            <div class="opacity-0 translate-y-8 transition-all duration-1000 ease-out will-change-transform" data-animate="fade-up">
+                                <p class="text-lg lg:text-xl text-purple-100 leading-relaxed">Your friendly online platform for learning how to code! At  ReanCode, we believe that anyone can learn programming, no matter where they are or what their background is. Our mission is to make coding easy, fun, and accessible to everyone — from beginners to future developers.
+                                </p>
+                            </div>
+                            <div class="opacity-0 translate-x-[50px] transition-all duration-1000 ease-out will-change-transform" data-animate="slide-right">
+                                <p class="text-lg lg:text-xl text-purple-100 leading-relaxed"> We offer interactive lessons in HTML, CSS, JavaScript, Python, Java, and more. Each course includes step-by-step tutorials, real projects, and quizzes to help you understand better. You can learn anytime, at your own pace, using your phone, tablet, or computer.
+                                </p>
+                            </div>
+                            <div class="opacity-0 translate-y-8 transition-all duration-1000 ease-out will-change-transform" data-animate="fade-up">
+                                <p class="text-lg lg:text-xl text-purple-100 leading-relaxed"> Our team is made up of teachers, coders, and designers who care about helping students grow in the tech world. Whether you want to build websites, apps, or just understand how coding works, we're here to support you every step of the way.</p>
+                                    <span class="block mt-4 text-yellow-300 font-semibold">Let's code the future together!</span>
+                                </p>
+                            </div>
+                            <div>
+                                <a href="#" 
+                                    class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
+                                    id="joinUsLink"
+                                    onclick="joinUsAction(event)"
+                                    >
+                                        Join us 
+                                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Content - Illustration -->
+                    <div class="flex justify-center">
+                        <div class="relative">
+                            <!-- Container for image and content -->
+                            <div class="w-80 h-80 lg:w-[36rem] lg:h-[36rem] bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+                                <!-- Centered content -->
+                                <div class="h-full flex items-center justify-center">
+                                    <div class="text-center space-y-4">
+                                        <!-- Circle with image inside -->
+                                        <div class="w-full h-full bg-gradient-to-r from-green-400 to-green-400 flex justify-center items-center">
+                                            <img src="../assets/about.jpg" alt="Illustration" class="object-contain w-full h-full" />
+                                        </div>                                
+                                        <h3 class="text-2xl font-bold">Start Coding</h3>
+                                        <p class="text-white/80">Begin your journey today</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features Section -->
+        <section class="py-16 bg-[#1f2937] text-white">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-6 items-center">
+                <!-- Code Block on the left side -->
+                <div class="bg-black p-4 rounded-xl shadow-lg">
+                    <pre class="text-green-400 font-mono text-sm">
+                        <code>
+                            <!DOCTYPE html>
+                            <html lang="en">
+                                <head>
+                                    <meta charset="UTF-8">
+                                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                    <title>ReanCode</title>
+                                </head>
+                                <body class="bg-gray-800 flex justify-center items-center min-h-screen">
+                                    <h1 class="text-6xl font-bold animate-glow">HELLO WORLD</h1>
+                                </body>
+                            </html>
+                        </code>
+                    </pre>
+                </div>
+        
+                <!-- Content on the right side -->
+                <div>
+                    <h2 class="text-3xl font-semibold text-green-500 mb-6">Features</h2>
+                    <p class="text-white-600 mb-4">
+                        ReanCode for coding offers many helpful features that make learning easy and fun. Students can learn anytime and anywhere using a computer or smartphone. The lessons are interactive, meaning learners can practice coding step by step with real examples.
+                    </p>
+                    <p class="text-white-300 mb-4">
+                        There are quizzes and challenges to test their understanding, and progress can be tracked easily. Most platforms also give certificates after finishing courses, which help learners show their skills.
+                    </p>
+                    <p class="text-white-300 mb-4">
+                        Some courses include video lessons that clearly explain each topic, and if students have questions, they can ask for help in discussion forums. With these features, e-learning makes coding more flexible and accessible for everyone.
+                    </p>
+                    <button 
+                        id="learnMoreBtn"
+                        class="inline-block mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 font-medium transition-all duration-200"
+                        onclick="learnMore()">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </section>        
+        
+        <!-- Partners Section -->
+        <section class="py-16 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-green-500 text-lg font-semibold mb-2">Our Services</h2>
+                    <h3 class="text-3xl lg:text-4xl font-bold text-white-500 dark:text-white mb-4 leading-tight theme-transition">
+                        By Joining ReanCode, You Can Gain Many Advantages.
+                    </h3>
+                    <p class="text-3xl lg:text-4xl font-bold text-white-500 dark:text-white-200 mb-4 leading-tight theme-transition">Learn coding anytime, anywhere with our top-rated e-learning platform. Gain access to expert resources, real projects, and a community of learners worldwide.</p>
+                </div>
+        
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300 theme-transition transform hover:-translate-y-2 group">
+                        <div class="w-12 h-12 bg-purple-600 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl">01</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4 theme-transition">Standardization learning</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
+                            It's hard to measure coding skills across different regions. Our platform offers consistent, high-quality training to help learners stay on the same level....
+                        </p>
+                        <a href="#" class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                        </a>
+                    </div>
+        
+                    <!-- Service 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300 theme-transition transform hover:-translate-y-2 group">
+                        <div class="w-12 h-12 bg-green-600 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl">02</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4 theme-transition">Reduced learning Costs</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
+                            There's no extra cost to access learning materials. With our platform, you can learn coding without paying for books or traveling to a class.... 
+                        </p>
+                        
+                        <a href="#" 
+                        class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
+                        id="joinUsLink"
+                        onclick="joinUsAction(event)"
+                        >
+                            Learn more 
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                        </a>
+                    </div>
+        
+                    <!-- Service 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300 theme-transition transform hover:-translate-y-2 group">
+                        <div class="w-12 h-12 bg-orange-600 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl">03</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4 theme-transition">Customized learning paths</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
+                            Everyone learns differently. Our e-learning platform lets you choose your learning pace and coding track—whether it's web development, Python, or data science....Read
+                        </p>
+                        <a href="#" 
+                        class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
+                        id="joinUsLink"
+                        onclick="joinUsAction(event)"
+                        >
+                            Learn more 
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                        </a>
+                    </div>
+                    <!-- service 4 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300 theme-transition transform hover:-translate-y-2 group">
+                        <div class="w-12 h-12 bg-purple-600 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl">04</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4 theme-transition">Affordable Pricing</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
+                            We offer free and low-cost courses. No printing or transport costs—just your device and internet, and you can start coding.... 
+                        </p>
+                        <a href="#" 
+                        class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
+                        id="joinUsLink"
+                        onclick="joinUsAction(event)"
+                        >
+                            Learn more 
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                        </a>
+                    </div>
+        
+                    <!-- Service 5 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300 theme-transition transform hover:-translate-y-2 group">
+                        <div class="w-12 h-12 bg-green-600 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl">05</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4 theme-transition">High Learner Satisfaction</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
+                            Students love our hands-on coding exercises and friendly interface. Many return for advanced courses after starting with the basics. ... 
+                        </p>
+                        <a href="#" 
+                        class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
+                        id="joinUsLink"
+                        onclick="joinUsAction(event)"
+                        >
+                            Learn more 
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                        </a>
+                    </div>
+        
+                    <!-- Service 6 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300 theme-transition transform hover:-translate-y-2 group">
+                        <div class="w-12 h-12 bg-orange-600 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl">06</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4 theme-transition">Multimedia Coding Resouces</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
+                            Learn coding through video lessons, interactive quizzes, and coding editors built into the platform. Our method makes it fun and easier to understand. ... 
+                        </p>
+                        <a href="#" 
+                        class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
+                        id="joinUsLink"
+                        onclick="joinUsAction(event)"
+                        >
+                            Learn more 
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Progress indicators -->
+                <div class="flex justify-center mt-12 space-x-2">
+                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <div class="w-3 h-3 bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></div>
+                    <div class="w-3 h-3 bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></div>
+                </div>
+            </div>
+        </section>   
+
+        <!-- Instructors Section -->
+        <section class="bg-gray-50 dark:bg-gray-800 py-16 theme-transition">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-2 dark:text-white theme-transition">Meet Our Teams</h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-10 theme-transition">
+                    On ReanCode, instructors from all over the world teach millions of students. We provide the knowledge and skills you need to succeed.
+                </p>
+
+                <div class="grid gap-6 justify-center">
+                    <!-- 1st row: 3 instructors -->
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <!-- Instructor 1 -->
+                        <div class="bg-white hover:text-[#20B486] dark:bg-gray-700 p-6 rounded-xl shadow-sm md:w-96 flex flex-col justify-center dark:text-[#20B486] transition-transform duration-300 hover:scale-105">
+                            <div class="w-24 h-24 mx-auto rounded-full mb-4 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold text-2xl">SM</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 dark:text-white dark:hover:text-[#20B486] theme-transition">RITH SARAMANITH</h3>
+                            <div class="flex justify-center space-x-3">
+                                <a href="https://github.com/Manith991" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-github text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white"></i>
+                                </a>
+                                <a href="https://www.facebook.com/share/1CULwtwKDp/" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-facebook text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Instructor 2 -->
+                        <div class="bg-white hover:text-[#20B486] dark:bg-gray-700 p-6 rounded-xl shadow-sm md:w-96  flex flex-col justify-center dark:text-[#20B486] transition-transform duration-300 hover:scale-105">
+                             <div class="w-24 h-24 mx-auto rounded-full mb-4 bg-gradient-to-r from-pink-400 to-red-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold text-2xl">EN</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 dark:text-white dark:hover:text-[#20B486] theme-transition">ENG SREYNICH</h3>
+                            <div class="flex justify-center space-x-3">
+                                <!-- GitHub Link -->
+                                <a href="https://github.com/engsreynich" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-github text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white"></i>
+                                </a>
+
+                                <!-- Facebook Link -->
+                                <a href="https://www.facebook.com/share/1CULwtwKDp/" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-facebook text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Instructor 3 -->
+                        <div class="bg-white hover:text-[#20B486] dark:bg-gray-700 p-6 rounded-xl shadow-sm md:w-96  flex flex-col justify-center dark:text-[#20B486] transition-transform duration-300 hover:scale-105">
+                            <div class="w-24 h-24 mx-auto rounded-full mb-4 bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold text-2xl">HN</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 dark:text-white dark:hover:text-[#20B486] theme-transition">HIEM SREYNIT</h3>
+                            <div class="flex justify-center space-x-3">
+                                <a href="https://github.com/engsreynich" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-github text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white"></i>
+                                </a>
+                                <a href="https://www.facebook.com/hiem.sreynit.9" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-facebook text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2nd row: 2 instructors centered -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center md:mx-auto md:w-2/3">
+                        <!-- Instructor 4 -->
+                        <div class="bg-white hover:text-[#20B486] dark:bg-gray-700 p-6 rounded-xl shadow-sm md:w-96  flex flex-col justify-center dark:text-[#20B486] transition-transform duration-300 hover:scale-105">
+                            <div class="w-24 h-24 mx-auto rounded-full mb-4 bg-gradient-to-r from-blue-400 to-orange-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold text-2xl">MN</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 dark:text-white dark:hover:text-[#20B486] theme-transition">MOUNG MEYNEANG</h3>
+                            <div class="flex justify-center space-x-3">
+                                <a href="https://github.com/engsreynich" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-github text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white"></i>
+                                </a>
+                                <a href="https://www.facebook.com/share/1CULwtwKDp/" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-facebook text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Instructor 5 -->
+                        <div class="bg-white hover:text-[#20B486] dark:bg-gray-700 p-6 rounded-xl shadow-sm md:w-96  flex flex-col justify-center dark:hover:text-[#20B486] transition-transform duration-300 hover:scale-105">
+                            <div class="w-24 h-24 mx-auto rounded-full mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-white font-bold text-2xl">KR</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 dark:text-white dark:hover:text-[#20B486] theme-transition ">KHORN CHANRAKSMEY</h3>
+                            <div class="flex justify-center space-x-3">
+                                <a href="https://github.com/khornchanraksmey" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-github text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white cursor-pointer transition-colors transform hover:scale-125"></i>
+                                </a>
+                                <a href="https://www.facebook.com/reaksmey.khorn.7/" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                    <i class="fab fa-facebook text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="bg-white dark:bg-gray-900 py-16 theme-transition">
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex justify-center mb-12">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mb-2 shadow-lg animate-pulse">
+                            <i class="fas fa-star text-white"></i>
+                        </div>
+                        <span class="text-gray-600 dark:text-gray-400 text-sm font-medium theme-transition">PREMIUM QUALITY</span>
+                    </div>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 max-w-4xl mx-auto leading-tight theme-transition">
+                    "ReanCode was fantastic! It is the perfect platform for those looking to start a new career, or need a refresher in modern development."
+                </h1>
+
+                <div class="flex justify-center">
+                    <div class="flex items-center space-x-4 bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border dark:border-gray-700 theme-transition hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-red-400 to-pink-500 flex items-center justify-center">
+                            <span class="text-white font-semibold text-lg">J</span>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="font-semibold text-gray-900 dark:text-white theme-transition">Jacob Jones</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm theme-transition">Software Engineer, Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center mt-12">
+                    <div class="flex space-x-2">
+                        <div class="w-8 h-1 bg-green-500 rounded-full animate-pulse"></div>
+                        <div class="w-1 h-1 bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></div>
+                        <div class="w-1 h-1 bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    
+
+  <!-- Newsletter Section -->
+  <section class="bg-gradient-to-r from-indigo-500 to-purple-700 text-white py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold mb-4">Subscribe To Get Update Every New Courses</h2>
+      <p class="mb-6">Stay updated with latest courses and learn from industry experts</p>
+      <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+        <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded text-black" required>
+        <button type="submit" class="bg-green-600 px-6 py-3 rounded hover:bg-green-700">Subscribe</button>
+      </form>
+    </div>
+  </section>
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 dark:bg-black text-gray-400 theme-transition">
+        <div class="max-w-7xl mx-auto px-8 py-16">
+            <div class="flex flex-col lg:flex-row justify-between gap-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <span class="text-white text-2xl font-bold">ReanCode</span>
+                    </div>
+                    <p class="max-w-sm text-sm leading-relaxed">
+                        Empowering the next generation of developers through innovative education and hands-on learning experiences.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 dark:bg-gray-700 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 dark:bg-gray-700 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 dark:bg-gray-700 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 dark:bg-gray-700 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1">
+                    <div>
+                        <h3 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Courses</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Web Development</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Mobile Apps</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Data Science</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">DevOps</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Company</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">About Us</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Careers</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Blog</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">News</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Support</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Help Center</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Community</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Contact Us</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Legal</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">Cookie Policy</a></li>
+                            <li><a href="#" class="hover:text-white dark:hover:text-gray-200 transition-colors">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 dark:bg-gray-900 border-t border-gray-700 dark:border-gray-600 theme-transition">
+            <div class="max-w-7xl mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm">© 2025 ReanCode. All rights reserved.</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Made with ❤️ for developers worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript --> 
+    <script>
+        <!-- animation paragraph -->
+        document.addEventListener("DOMContentLoaded", function() {
+          const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          };
+      
+          const observerCallback = (entries, observerInstance) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const target = entry.target;
+      
+                // Remove initial styles
+                target.classList.remove('opacity-0', 'translate-y-8', 'translate-x-[50px]');
+                
+                // Add styles for visible state
+                target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0');
+      
+                // Stop observing this element after animation
+                observerInstance.unobserve(target);
+              }
+            });
+          };
+      
+          // Create an IntersectionObserver instance
+          const observer = new IntersectionObserver(observerCallback, observerOptions);
+      
+          // Observe all elements with the data-animate attribute
+          document.querySelectorAll('[data-animate]').forEach(el => {
+            observer.observe(el);
+          });
+        });
+      </script>
+      
+    <script>
+
+        // Initialize theme on page load (before DOM is ready)
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+
+        // Theme Management
+        let currentTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        function updateThemeIcons() {
+            const themeIcon = document.getElementById('themeIcon');
+            const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+            
+            if (currentTheme === 'dark') {
+                themeIcon.className = 'fas fa-sun w-5 h-5 text-gray-600 dark:text-gray-300';
+                mobileThemeIcon.className = 'fas fa-sun w-5 h-5 text-gray-600 dark:text-gray-300';
+            } else {
+                themeIcon.className = 'fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300';
+                mobileThemeIcon.className = 'fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300';
+            }
+        }
+
+        function toggleTheme() {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            if (currentTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            
+            localStorage.setItem('theme', currentTheme);
+            updateThemeIcons();
+        }
+
+        // Mobile Menu Management
+        let isMobileMenuOpen = false;
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('menuBtn');
+            
+            isMobileMenuOpen = !isMobileMenuOpen;
+            
+            if (isMobileMenuOpen) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileMenu.style.maxHeight = '0px';
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        }
+
+        // Dropdown Management
+        let isDropdownOpen = false;
+
+        function toggleDropdown(event) {
+            event.stopPropagation();
+            const dropMenu = document.getElementById('dropdownMenu');
+            const dropIcon = document.getElementById('dropdownIcon');
+            
+            isDropdownOpen = !isDropdownOpen;
+            
+            if (isDropdownOpen) {
+                dropMenu.classList.remove('opacity-0', 'invisible', 'scale-95');
+                dropMenu.classList.add('opacity-100', 'visible', 'scale-100');
+                dropIcon.classList.add('rotate-180');
+            } else {
+                dropMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+                dropMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+                dropIcon.classList.remove('rotate-180');
+            }
+        }
+
+        function closeDropdown() {
+            if (isDropdownOpen) {
+                const dropMenu = document.getElementById('dropdownMenu');
+                const dropIcon = document.getElementById('dropdownIcon');
+                
+                dropMenu.classList.remove('opacity-100', 'visible', 'scale-100');
+                dropMenu.classList.add('opacity-0', 'invisible', 'scale-95');
+                dropIcon.classList.remove('rotate-180');
+                isDropdownOpen = false;
+            }
+        }
+
+        // Typing animation for developer text
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            element.style.borderRight = '2px solid #10b981';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    // Blinking cursor effect
+                    setInterval(() => {
+                        element.style.borderRight = element.style.borderRight === '2px solid transparent' 
+                            ? '2px solid #10b981' 
+                            : '2px solid transparent';
+                    }, 750);
+                }
+            }
+            type();
+        }
+
+        // Counter animation
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target.toLocaleString();
+                }
+            }
+            updateCounter();
+        }
+
+        // Create floating particles for hero section
+        function createHeroParticles() {
+            const particlesContainer = document.getElementById('heroParticles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'absolute w-1 h-1 bg-white rounded-full opacity-20';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particle.style.animation = 'float 6s ease-in-out infinite';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Sparkle Effect for buttons
+        function createSparkles(element) {
+            const rect = element.getBoundingClientRect();
+            const sparkleCount = 8;
+
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'fixed w-2 h-2 bg-yellow-400 rounded-full pointer-events-none z-50';
+                sparkle.style.left = rect.left + rect.width / 2 + 'px';
+                sparkle.style.top = rect.top + rect.height / 2 + 'px';
+
+                document.body.appendChild(sparkle);
+
+                const angle = (i / sparkleCount) * Math.PI * 2;
+                const distance = 40 + Math.random() * 40;
+                const duration = 600 + Math.random() * 400;
+
+                sparkle.animate([
+                    {
+                        transform: 'translate(0, 0) scale(0)',
+                        opacity: '1'
+                    },
+                    {
+                        transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(1)`,
+                        opacity: '0'
+                    }
+                ], {
+                    duration: duration,
+                    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }).onfinish = () => sparkle.remove();
+            }
+        }
+
+        // Scroll progress indicator
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight;
+            
+            scrollProgress.style.transform = `scaleX(${scrollPercent})`;
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update theme icons on load
+            updateThemeIcons();
+
+            // Setup theme toggle event listeners
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            document.getElementById('mobileThemeToggle').addEventListener('click', toggleTheme);
+
+            // Setup mobile menu
+            document.getElementById('menuBtn').addEventListener('click', toggleMobileMenu);
+
+            // Setup dropdown
+            document.getElementById('dropdownBtn').addEventListener('click', toggleDropdown);
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                const dropBtn = document.getElementById('dropdownBtn');
+                const dropMenu = document.getElementById('dropdownMenu');
+                
+                if (!dropBtn.contains(event.target) && !dropMenu.contains(event.target)) {
+                    closeDropdown();
+                }
+            });
+
+            // Prevent dropdown from closing when clicked inside
+            document.getElementById('dropdownMenu').addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+
+            // Start typing animation after a short delay
+            setTimeout(() => {
+                const developerElement = document.getElementById('developer-text');
+                if (developerElement) {
+                    typeWriter(developerElement, 'developer', 150);
+                }
+            }, 1000);
+
+            // Animate counters when they come into view
+            const counters = document.querySelectorAll('.counter');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.dataset.target);
+                        animateCounter(entry.target, target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+
+            // Create hero particles
+            createHeroParticles();
+
+            // Setup button sparkle effects
+            const sparkleButtons = [
+                'startLearningBtn',
+                'viewCoursesBtn',
+                'registerBtn',
+                'runCode'
+            ];
+
+            sparkleButtons.forEach(buttonId => {
+                const button = document.getElementById(buttonId);
+                if (button) {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        createSparkles(this);
+                        setTimeout(() => {
+                            if (buttonId === 'runCode') {
+                                alert('🎉 Code executed successfully! Welcome to the developer world!');
+                            } else if (buttonId === 'registerBtn') {
+                                alert('🎉 Welcome to ReanCode! Registration coming soon!');
+                            } else {
+                                alert('🚀 Exciting! This feature is coming soon!');
+                            }
+                        }, 300);
+                    });
+                }
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (isMobileMenuOpen) {
+                            toggleMobileMenu();
+                        }
+                    }
+                });
+            });
+
+            // Add loading animation
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+
+            // Setup scroll progress indicator
+            window.addEventListener('scroll', updateScrollProgress);
+        });
+
+        // Handle system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                currentTheme = e.matches ? 'dark' : 'light';
+                
+                if (currentTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+                
+                updateThemeIcons();
+            }
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.animate-float');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.02 + (index * 0.01);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.bg-white, .bg-gray-50').forEach(el => {
+            observer.observe(el);
+        });
+        function joinUsAction(event) {
+            event.preventDefault(); // Prevent the default anchor link behavior
+            console.log("Join Us button clicked!");
+            alert("Thank you for joining us! You will be redirected shortly.");
+            
+            // Optional: You can add an animation or effect here
+            const link = document.getElementById("joinUsLink");
+            link.classList.add("animate-bounce");
+    
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = "https://www.reancode.com/join-us";  // Change to your actual link
+            }, 2000); // 2-second delay before redirect
+        }
+        function learnMoreAction(event) {
+            event.preventDefault(); // Prevent the default anchor link behavior
+            console.log("Learn More button clicked!");
+            alert("Learn more about ReanCode! You will be redirected to more information.");
+    
+            // Optional: Add an animation or effect
+            const link = document.getElementById("learnMoreLink");
+            link.classList.add("animate-pulse");
+    
+            // Redirect after 2 seconds (Optional)
+            setTimeout(() => {
+                window.location.href = "https://www.reancode.com/learn-more"; // Change to your actual link
+            }, 2000); // 2-second delay before redirect
+        }
+    </script>
+</body>
+</html>

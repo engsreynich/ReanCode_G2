@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReanCode - Learn & Create</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+              float: "float 3s ease-in-out infinite",
+              gradient: "gradient 3s linear infinite",
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "bounce-slow": "bounce 2s infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              gradient: {
+                "0%": { "background-position": "0% center" },
+                "100%": { "background-position": "200% center" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .custom-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      .dark .custom-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+          0 2px 4px -1px rgba(0, 0, 0, 0.2);
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+  >
+    <!-- ============ HEADER ============ -->
+    <header
+      class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md transition-colors duration-300"
+    >
+      <div class="max-w-7xl mx-auto flex items-center px-4 py-3">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mr-8">
+          <div
+            class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse-slow"
+          >
+            <i class="fas fa-code text-white"></i>
+          </div>
+          <span class="text-2xl font-bold">
+            <span
+              class="bg-gradient-to-r from-green-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-[length:200%] animate-gradient"
+              >Rean</span
+            ><span class="text-gray-800 dark:text-gray-200">Code</span>
+          </span>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative flex-1 max-w-lg">
+          <div
+            class="flex items-center bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-2xl custom-shadow transition-colors duration-300"
+          >
+            <i class="fa fa-search text-gray-400 dark:text-gray-300 mx-4"></i>
+            <input
+              type="text"
+              placeholder="Want to learn?"
+              class="flex-1 bg-transparent text-sm sm:text-base placeholder-gray-400 dark:placeholder-gray-300 text-gray-900 dark:text-gray-100 focus:outline-none py-3"
+            />
+            <button
+              id="dropBtn"
+              class="flex items-center gap-1 px-4 py-3 text-teal-500 dark:text-teal-400 font-medium border-l border-gray-100 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+            >
+              <span class="hidden sm:inline">Explore</span>
+              <i
+                id="dropIcon"
+                class="fa fa-chevron-down transition-transform duration-200"
+              ></i>
+            </button>
+          </div>
+
+          <!-- Dropdown Menu -->
+          <nav
+            id="dropMenu"
+            class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg py-2 opacity-0 invisible transition-all duration-200 transform scale-95"
+          >
+            <a
+              href="#"
+              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              >All Categories</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              >Technology</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              >Business</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              >Design</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              >Marketing</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              >Health & Fitness</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              >Photography</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+              >Music</a
+            >
+          </nav>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-6 ml-8">
+          <a
+            href="#"
+            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Courses</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Contact</a
+          >
+
+          <!-- Dark Mode Toggle -->
+          <button
+            id="themeToggle"
+            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
+            aria-label="Toggle dark mode"
+          >
+            <i
+              id="themeIcon"
+              class="fas fa-moon text-gray-600 dark:text-gray-300"
+            ></i>
+          </button>
+
+          <button
+            class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            Sign In
+          </button>
+          <button
+            class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-2 px-4 transition-all duration-200 transform hover:scale-105"
+          >
+            Create Account
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuBtn"
+          class="lg:hidden ml-4 text-2xl text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800"
+      >
+        <nav class="flex flex-col px-4 pb-4 space-y-2">
+          <a
+            href="/index.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Home</a
+          >
+          <a
+            href="/index.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >About Us</a
+          >
+          <a
+            href="./Course.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Courses</a
+          >
+          <a
+            href="./Contact.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Contact</a
+          >
+
+          <!-- Mobile Dark Mode Toggle -->
+          <button
+            id="mobileThemeToggle"
+            class="flex items-center gap-3 py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+          >
+            <i id="mobileThemeIcon" class="fas fa-moon"></i>
+            <span id="mobileThemeText">Dark Mode</span>
+          </button>
+
+          <button
+            class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            Sign In
+          </button>
+          <button
+            class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200"
+          >
+            Create Account
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ============ HERO SECTION ============ -->
+    <main class="gradient-bg min-h-screen">
+      <div class="min-h-screen flex items-center justify-center p-4">
+        <div
+          class="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl w-full"
+        >
+          <!-- Left Image Section -->
+          <div class="md:w-1/2 flex items-center justify-center">
+            <img
+              src="../assets/signup.png"
+              alt="Signup illustration"
+              class="w-full max-w-md"
+            />
+          </div>
+
+          <!-- Right Side - Form -->
+          <div class="flex-1 max-w-md w-full">
+            <div class="bg-white rounded-2xl p-8 card-shadow">
+              <h1 class="text-2xl font-bold text-gray-900 mb-2">
+                Create an account
+              </h1>
+              <p class="text-gray-600 mb-8">Enter your details below</p>
+
+              <form class="space-y-6" id="signupForm">
+                <!-- Name Input -->
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Name*"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none input-focus transition-all duration-200"
+                    required
+                  />
+                </div>
+
+                <!-- Email/Phone Input -->
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Email or Phone Number"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none input-focus transition-all duration-200"
+                  />
+                </div>
+
+                <!-- Password Input -->
+                <div>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none input-focus transition-all duration-200"
+                    required
+                  />
+                </div>
+
+                <!-- Create Account Button -->
+                <button
+                  type="submit"
+                  class="w-full bg-emerald-500 text-white py-3 rounded-lg font-medium btn-hover transition-all duration-200"
+                >
+                  Create Account
+                </button>
+
+                <!-- Google Sign Up -->
+                <button
+                  type="button"
+                  class="w-full border border-gray-300 text-gray-700 py-3 rounded-lg font-medium flex items-center justify-center gap-3 google-btn transition-all duration-200"
+                >
+                  <svg class="w-5 h-5" viewBox="0 0 24 24">
+                    <path
+                      fill="#4285F4"
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                    />
+                  </svg>
+                  Sign up with Google
+                </button>
+
+                <!-- Login Link -->
+                <p class="text-center text-gray-600">
+                  Already have account?
+                  <a
+                    href="#"
+                    class="text-gray-900 font-medium hover:text-emerald-500 transition-colors duration-200"
+                  >
+                    Log In
+                  </a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Form submission handler
+        document
+          .getElementById("signupForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const name = this.querySelector('input[placeholder="Name*"]').value;
+            const email = this.querySelector(
+              'input[placeholder="Email or Phone Number"]'
+            ).value;
+            const password = this.querySelector(
+              'input[placeholder="Password"]'
+            ).value;
+
+            // Simple validation
+            if (!name.trim()) {
+              alert("Please enter your name");
+              return;
+            }
+
+            if (!password.trim()) {
+              alert("Please enter a password");
+              return;
+            }
+
+            // Simulate account creation
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+
+            button.textContent = "Creating Account...";
+            button.disabled = true;
+
+            setTimeout(() => {
+              alert("Account created successfully! Welcome aboard! 🎉");
+              button.textContent = originalText;
+              button.disabled = false;
+              this.reset();
+            }, 2000);
+          });
+
+        // Add input animation effects
+        const inputs = document.querySelectorAll("input");
+        inputs.forEach((input) => {
+          input.addEventListener("focus", function () {
+            this.parentElement.classList.add("scale-105");
+          });
+
+          input.addEventListener("blur", function () {
+            this.parentElement.classList.remove("scale-105");
+          });
+        });
+
+        // Add button click effects
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            this.classList.add("scale-95");
+            setTimeout(() => {
+              this.classList.remove("scale-95");
+            }, 150);
+          });
+        });
+
+        // Floating elements animation enhancement
+        const floatingElements =
+          document.querySelectorAll(".floating-elements");
+        floatingElements.forEach((element, index) => {
+          element.style.animationDelay = `${-index * 2}s`;
+        });
+      </script>
+    </main>
+    <!-- ============ FOOTER ============ -->
+    <footer
+      class="bg-gray-900 dark:bg-gray-950 text-gray-400 transition-colors duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-8 py-16">
+        <div class="flex flex-col lg:flex-row justify-between gap-12">
+          <!-- Logo/Tagline -->
+          <div class="space-y-6">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center"
+              >
+                <i class="fas fa-code text-white text-xl"></i>
+              </div>
+              <span class="text-white text-2xl font-bold">ReanCode</span>
+            </div>
+            <p class="max-w-sm text-sm leading-relaxed">
+              Empowering the next generation of developers through innovative
+              education and hands-on learning experiences.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 dark:bg-gray-900 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="fab fa-twitter text-sm"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 dark:bg-gray-900 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="fab fa-linkedin-in text-sm"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 dark:bg-gray-900 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="fab fa-github text-sm"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 dark:bg-gray-900 hover:bg-gradient-to-r hover:from-green-400 hover:to-purple-500 rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="fab fa-youtube text-sm"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1">
+            <div>
+              <h3
+                class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
+              >
+                Courses
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Web Development</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Mobile Apps</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Data Science</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >DevOps</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
+              >
+                Company
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >News</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
+              >
+                Support
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Community</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >FAQs</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
+              >
+                Legal
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >Cookie Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition-colors"
+                    >GDPR</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-gray-800 dark:bg-gray-900 border-t border-gray-700 dark:border-gray-800 transition-colors duration-300"
+      >
+        <div
+          class="max-w-7xl mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-sm">© 2025 ReanCode. All rights reserved.</p>
+          <p class="text-sm text-gray-500">
+            Made with ❤️ for developers worldwide
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+      // Dark Mode Functionality
+      const themeToggle = document.getElementById("themeToggle");
+      const mobileThemeToggle = document.getElementById("mobileThemeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const mobileThemeIcon = document.getElementById("mobileThemeIcon");
+      const mobileThemeText = document.getElementById("mobileThemeText");
+      const html = document.documentElement;
+
+      // Check for saved theme preference or default to light mode
+      const currentTheme = localStorage.getItem("theme") || "light";
+
+      // Apply the current theme
+      if (currentTheme === "dark") {
+        html.classList.add("dark");
+        updateThemeIcons(true);
+      } else {
+        html.classList.remove("dark");
+        updateThemeIcons(false);
+      }
+
+      function updateThemeIcons(isDark) {
+        if (isDark) {
+          themeIcon.className = "fas fa-sun text-yellow-500";
+          mobileThemeIcon.className = "fas fa-sun text-yellow-500";
+          mobileThemeText.textContent = "Light Mode";
+        } else {
+          themeIcon.className = "fas fa-moon text-gray-600 dark:text-gray-300";
+          mobileThemeIcon.className = "fas fa-moon";
+          mobileThemeText.textContent = "Dark Mode";
+        }
+      }
+
+      function toggleTheme() {
+        const isDark = html.classList.contains("dark");
+
+        if (isDark) {
+          html.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+          updateThemeIcons(false);
+        } else {
+          html.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+          updateThemeIcons(true);
+        }
+      }
+
+      // Theme toggle event listeners
+      themeToggle.addEventListener("click", toggleTheme);
+      mobileThemeToggle.addEventListener("click", toggleTheme);
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen =
+          mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px";
+
+        if (isOpen) {
+          mobileMenu.style.maxHeight = "0px";
+          menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
+        } else {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          menuBtn.innerHTML = '<i class="fa fa-times"></i>';
+        }
+      });
+
+      // Dropdown Menu
+      const dropBtn = document.getElementById("dropBtn");
+      const dropIcon = document.getElementById("dropIcon");
+      const dropMenu = document.getElementById("dropMenu");
+
+      dropBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = dropMenu.classList.contains("opacity-100");
+
+        if (isOpen) {
+          dropMenu.classList.remove("opacity-100", "visible", "scale-100");
+          dropMenu.classList.add("opacity-0", "invisible", "scale-95");
+          dropIcon.classList.remove("rotate-180");
+        } else {
+          dropMenu.classList.remove("opacity-0", "invisible", "scale-95");
+          dropMenu.classList.add("opacity-100", "visible", "scale-100");
+          dropIcon.classList.add("rotate-180");
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", () => {
+        dropMenu.classList.remove("opacity-100", "visible", "scale-100");
+        dropMenu.classList.add("opacity-0", "invisible", "scale-95");
+        dropIcon.classList.remove("rotate-180");
+      });
+
+      // Prevent dropdown from closing when clicked inside
+      dropMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

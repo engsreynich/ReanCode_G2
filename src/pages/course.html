@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course</title>
-    <link rel="stylesheet" href="../output.css">
+    <title>Courses</title>
+    <link rel="stylesheet" href="../output.css" />
+    <link rel="stylesheet" href="../input.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -165,22 +166,22 @@
       >
         <nav class="flex flex-col px-4 pb-4 space-y-2">
           <a
-            href="#"
+            href="/index.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Home</a
           >
           <a
-            href="#"
+            href="/index.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >About Us</a
           >
           <a
-            href="#"
+            href="./Course.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Courses</a
           >
           <a
-            href="#"
+            href="./Contact.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Contact</a
           >
@@ -241,12 +242,12 @@
           <div class="flex flex-col lg:flex-row items-center justify-between">
             <div class="text-white lg:w-1/2 mb-8 lg:mb-0">
               <h1 class="text-4xl lg:text-6xl font-bold mb-4 leading-tight">
-                Eduvi Courses<br />
-                <span class="text-purple-200">For All Standards</span>
+                Start Learning<br />
+                <span class="text-purple-200">Something New Today</span>
               </h1>
               <p class="text-lg opacity-90 mb-6">
-                Discover comprehensive learning resources tailored for every
-                academic standard
+                Discover free courses in HTML, CSS, JavaScript, Python, Java, and more. 
+                Build your skills and your future — one lesson at a time.
               </p>
               <button
                 class="bg-secondary-light text-text-dark px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition-all duration-300 transform hover:scale-105"
@@ -353,7 +354,7 @@
           {
             id: 1,
             title: "Mastering HTML5",
-            category: "HTML",
+            category: "WebMarkup",
             image: "../assets/images/courseImg1.jpg",
             description:
               "Master HTML and Its Latest Features – From Basics to Advanced for Web Design and Front End Web Development.",
@@ -363,8 +364,8 @@
           },
           {
             id: 2,
-            title: "CSS-The Complete Guide 2025",
-            category: "CSS",
+            title: "CSS-Complete Guide",
+            category: "Styling",
             image: "../assets/images/courseImg2.jpg",
             description:
               "Learn CSS for the first time or brush up your CSS skills and dive in even deeper. EVERY web developer has to know CSS.",
@@ -375,11 +376,11 @@
           },
           {
             id: 3,
-            title: "Standard Five",
-            category: "Science",
+            title: "Complete JavaScript",
+            category: "Frontend",
             image: "../assets/images/courseImg3.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory.",
             rating: 4.7,
             reviews: 189,
             price: "$45",
@@ -387,11 +388,11 @@
           },
           {
             id: 4,
-            title: "Standard Five",
-            category: "History",
+            title: "The Ultimate Course",
+            category: "Library",
             image: "../assets/images/courseImg4.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "Master modern React from beginner to advanced! Next.js, Context API, React Query, Redux, Tailwind",
             rating: 4.6,
             reviews: 298,
             price: "$45",
@@ -399,11 +400,11 @@
           },
           {
             id: 5,
-            title: "Standard Five",
-            category: "Geography",
+            title: "Java Masterclass",
+            category: "Backend",
             image: "../assets/images/courseImg5.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "Gain real-world experience with OOP, coding exercises, and problem-solving for job-ready Java development skills",
             rating: 4.8,
             reviews: 234,
             price: "$45",
@@ -411,11 +412,11 @@
           },
           {
             id: 6,
-            title: "Standard Five",
-            category: "Physics",
+            title: "100 Days of Code",
+            category: "Backend",
             image: "../assets/images/courseImg6.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "Master Python by building 100 projects in 100 days.Learn data science, automation, build websites, and games!",
             rating: 4.9,
             reviews: 345,
             price: "$45",
@@ -423,11 +424,11 @@
           },
           {
             id: 7,
-            title: "Standard Five",
-            category: "Chemistry",
+            title: "The 20 Masterclass",
+            category: "OOP",
             image: "../assets/images/courseImg7.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "Learn and Master Modern C++ From Beginning to Advanced in Plain English : C++11, C++14, C++17, C++20 and More!",
             rating: 4.7,
             reviews: 267,
             price: "$45",
@@ -435,11 +436,11 @@
           },
           {
             id: 8,
-            title: "Standard Five",
-            category: "Biology",
+            title: "PHP From Scratch",
+            category: "Backend",
             image: "../assets/images/courseImg8.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "Learn PHP fundamentals then build a job listing website from the ground up, using a Laravel-like infrastructure",
             rating: 4.8,
             reviews: 198,
             price: "$45",
@@ -447,10 +448,11 @@
           },
           {
             id: 9,
-            title: "Standard Five",
-            category: "Art",
+            title: "5 Days of SQL",
+            category: "Data",
+            image: "../assets/images/courseImg9.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "Master SQL in just 15 days from Basics to Pro by working daily on real-life projects...",
             rating: 4.6,
             reviews: 156,
             price: "$45",
@@ -458,10 +460,11 @@
           },
           {
             id: 10,
-            title: "Standard Five",
-            category: "Music",
+            title: "Understanding APIs",
+            category: "API",
+            image: "../assets/images/courseImg10.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "An introduction to how APIs and RESTful APIs work. No coding in this course, it's all conceptual.",
             rating: 4.9,
             reviews: 234,
             price: "$45",
@@ -469,10 +472,11 @@
           },
           {
             id: 11,
-            title: "Standard Five",
-            category: "PE",
+            title: "Cloud Computing",
+            category: "Cloud",
+            image: "../assets/images/courseImg11.jpg",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "Hands-On with AWS EC2, Lambda, S3, API Gateway, Cloud Watch, Serverless Architecture & Lot more",
             rating: 4.7,
             reviews: 289,
             price: "$45",
@@ -480,10 +484,11 @@
           },
           {
             id: 12,
-            title: "Standard Five",
-            category: "IT",
+            title: "Microservices with SpringBoot",
+            category: "DevOps",
+            image: "../assets/images/courseImg12.avif",
             description:
-              "Standard 5 Learning Resources. Learning Resources ensure that the school has the...",
+              "Learn & Develop Microservices with Java, Spring Boot, Spring Cloud, Docker...",
             rating: 4.8,
             reviews: 312,
             price: "$45",
