@@ -46,6 +46,35 @@
       .hero-gradient {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .dark .gradient-bg {
+        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+      }
+      .card-shadow {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .dark .card-shadow {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4),
+          0 10px 10px -5px rgba(0, 0, 0, 0.2);
+      }
+      .input-focus:focus {
+        border-color: #10b981;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+      }
+      .btn-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+      }
+      .google-btn:hover {
+        background-color: #f9fafb;
+        transform: translateY(-1px);
+      }
+      .dark .google-btn:hover {
+        background-color: #374151;
+      }
     </style>
   </head>
   <body
@@ -93,7 +122,6 @@
               ></i>
             </button>
           </div>
-
           <!-- Dropdown Menu -->
           <nav
             id="dropMenu"
@@ -145,57 +173,98 @@
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center gap-6 ml-8">
           <a
-            href="#"
-            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            href="../../index.html"
+            class="text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
             >Home</a
           >
           <a
-            href="#"
-            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            href="about.html"
+            class="text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
             >About Us</a
           >
           <a
-            href="#"
-            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            href="course.html"
+            class="text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
             >Courses</a
           >
           <a
-            href="#"
-            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-            >Contact</a
+            href="contact.html"
+            class="text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >Contact Us</a
           >
 
-          <!-- Dark Mode Toggle -->
+          <!-- Theme Toggle -->
           <button
             id="themeToggle"
-            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
-            aria-label="Toggle dark mode"
+            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+            aria-label="Toggle theme"
           >
             <i
               id="themeIcon"
-              class="fas fa-moon text-gray-600 dark:text-gray-300"
+              class="fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300"
             ></i>
           </button>
-
           <button
-            class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-white rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors theme-transition"
           >
-            Sign In
+            <a href="signin.html">Sign In</a>
           </button>
           <button
             class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-2 px-4 transition-all duration-200 transform hover:scale-105"
           >
-            Create Account
+            <a href="signup.html">Create Account</a>
           </button>
         </nav>
 
         <!-- Mobile Menu Button -->
-        <button
-          id="menuBtn"
-          class="lg:hidden ml-4 text-2xl text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800"
         >
-          <i class="fa fa-bars"></i>
-        </button>
+          <nav class="flex flex-col px-4 pb-4 space-y-2">
+            <a
+              href="index.html"
+              class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >About Us</a
+            >
+            <a
+              href="course.html"
+              class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >Courses</a
+            >
+            <a
+              href="contact.html"
+              class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >Contact Us</a
+            >
+
+            <!-- Mobile Dark Mode Toggle -->
+            <button
+              id="mobileThemeToggle"
+              class="flex items-center gap-3 py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >
+              <i id="mobileThemeIcon" class="fas fa-moon"></i>
+              <span id="mobileThemeText">Dark Mode</span>
+            </button>
+
+            <button
+              class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            >
+              <a href="signin.html">Sign In</a>
+            </button>
+            <button
+              class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200"
+            >
+              <a href="signup.html">Create Account</a>
+            </button>
+          </nav>
+        </div>
       </div>
 
       <!-- Mobile Menu -->
@@ -215,16 +284,15 @@
             >About Us</a
           >
           <a
-            href="./Course.html"
+            href="course.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Courses</a
           >
           <a
-            href="./Contact.html"
+            href="contact.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-            >Contact</a
+            >Contact Us</a
           >
-
           <!-- Mobile Dark Mode Toggle -->
           <button
             id="mobileThemeToggle"
@@ -233,7 +301,6 @@
             <i id="mobileThemeIcon" class="fas fa-moon"></i>
             <span id="mobileThemeText">Dark Mode</span>
           </button>
-
           <button
             class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
@@ -249,7 +316,7 @@
     </header>
 
     <!-- ============ HERO SECTION ============ -->
-    <main class="gradient-bg min-h-screen">
+    <main class="gradient-bg min-h-screen transition-colors duration-300">
       <div class="min-h-screen flex items-center justify-center p-4">
         <div
           class="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl w-full"
@@ -262,14 +329,21 @@
               class="w-full max-w-md"
             />
           </div>
-
           <!-- Right Side - Form -->
           <div class="flex-1 max-w-md w-full">
-            <div class="bg-white rounded-2xl p-8 card-shadow">
-              <h1 class="text-2xl font-bold text-gray-900 mb-2">
+            <div
+              class="bg-white dark:bg-gray-800 rounded-2xl p-8 card-shadow transition-colors duration-300"
+            >
+              <h1
+                class="text-2xl font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300"
+              >
                 Create an account
               </h1>
-              <p class="text-gray-600 mb-8">Enter your details below</p>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-300"
+              >
+                Enter your details below
+              </p>
 
               <form class="space-y-6" id="signupForm">
                 <!-- Name Input -->
@@ -277,42 +351,38 @@
                   <input
                     type="text"
                     placeholder="Name*"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none input-focus transition-all duration-200"
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-300 focus:outline-none input-focus transition-all duration-200"
                     required
                   />
                 </div>
-
                 <!-- Email/Phone Input -->
                 <div>
                   <input
                     type="text"
                     placeholder="Email or Phone Number"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none input-focus transition-all duration-200"
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-300 focus:outline-none input-focus transition-all duration-200"
                   />
                 </div>
-
                 <!-- Password Input -->
                 <div>
                   <input
                     type="password"
                     placeholder="Password"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none input-focus transition-all duration-200"
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-300 focus:outline-none input-focus transition-all duration-200"
                     required
                   />
                 </div>
-
                 <!-- Create Account Button -->
                 <button
                   type="submit"
-                  class="w-full bg-emerald-500 text-white py-3 rounded-lg font-medium btn-hover transition-all duration-200"
+                  class="w-full bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white py-3 rounded-lg font-medium btn-hover transition-all duration-200"
                 >
                   Create Account
                 </button>
-
                 <!-- Google Sign Up -->
                 <button
                   type="button"
-                  class="w-full border border-gray-300 text-gray-700 py-3 rounded-lg font-medium flex items-center justify-center gap-3 google-btn transition-all duration-200"
+                  class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 py-3 rounded-lg font-medium flex items-center justify-center gap-3 google-btn transition-all duration-200"
                 >
                   <svg class="w-5 h-5" viewBox="0 0 24 24">
                     <path
@@ -334,13 +404,14 @@
                   </svg>
                   Sign up with Google
                 </button>
-
                 <!-- Login Link -->
-                <p class="text-center text-gray-600">
+                <p
+                  class="text-center text-gray-600 dark:text-gray-400 transition-colors duration-300"
+                >
                   Already have account?
                   <a
                     href="#"
-                    class="text-gray-900 font-medium hover:text-emerald-500 transition-colors duration-200"
+                    class="text-gray-900 dark:text-white font-medium hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors duration-200"
                   >
                     Log In
                   </a>
@@ -350,81 +421,8 @@
           </div>
         </div>
       </div>
-
-      <script>
-        // Form submission handler
-        document
-          .getElementById("signupForm")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[placeholder="Name*"]').value;
-            const email = this.querySelector(
-              'input[placeholder="Email or Phone Number"]'
-            ).value;
-            const password = this.querySelector(
-              'input[placeholder="Password"]'
-            ).value;
-
-            // Simple validation
-            if (!name.trim()) {
-              alert("Please enter your name");
-              return;
-            }
-
-            if (!password.trim()) {
-              alert("Please enter a password");
-              return;
-            }
-
-            // Simulate account creation
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-
-            button.textContent = "Creating Account...";
-            button.disabled = true;
-
-            setTimeout(() => {
-              alert("Account created successfully! Welcome aboard! 🎉");
-              button.textContent = originalText;
-              button.disabled = false;
-              this.reset();
-            }, 2000);
-          });
-
-        // Add input animation effects
-        const inputs = document.querySelectorAll("input");
-        inputs.forEach((input) => {
-          input.addEventListener("focus", function () {
-            this.parentElement.classList.add("scale-105");
-          });
-
-          input.addEventListener("blur", function () {
-            this.parentElement.classList.remove("scale-105");
-          });
-        });
-
-        // Add button click effects
-        const buttons = document.querySelectorAll("button");
-        buttons.forEach((button) => {
-          button.addEventListener("click", function () {
-            this.classList.add("scale-95");
-            setTimeout(() => {
-              this.classList.remove("scale-95");
-            }, 150);
-          });
-        });
-
-        // Floating elements animation enhancement
-        const floatingElements =
-          document.querySelectorAll(".floating-elements");
-        floatingElements.forEach((element, index) => {
-          element.style.animationDelay = `${-index * 2}s`;
-        });
-      </script>
     </main>
+
     <!-- ============ FOOTER ============ -->
     <footer
       class="bg-gray-900 dark:bg-gray-950 text-gray-400 transition-colors duration-300"
@@ -504,7 +502,6 @@
                 </li>
               </ul>
             </div>
-
             <div>
               <h3
                 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
@@ -534,7 +531,6 @@
                 </li>
               </ul>
             </div>
-
             <div>
               <h3
                 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
@@ -564,7 +560,6 @@
                 </li>
               </ul>
             </div>
-
             <div>
               <h3
                 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
@@ -597,7 +592,6 @@
           </div>
         </div>
       </div>
-
       <div
         class="bg-gray-800 dark:bg-gray-900 border-t border-gray-700 dark:border-gray-800 transition-colors duration-300"
       >
@@ -614,6 +608,22 @@
 
     <!-- ============ SCRIPTS ============ -->
     <script>
+      // Initialize theme on page load
+      function initializeTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add("dark");
+          updateThemeIcons(true);
+        } else {
+          document.documentElement.classList.remove("dark");
+          updateThemeIcons(false);
+        }
+      }
+
       // Dark Mode Functionality
       const themeToggle = document.getElementById("themeToggle");
       const mobileThemeToggle = document.getElementById("mobileThemeToggle");
@@ -621,18 +631,6 @@
       const mobileThemeIcon = document.getElementById("mobileThemeIcon");
       const mobileThemeText = document.getElementById("mobileThemeText");
       const html = document.documentElement;
-
-      // Check for saved theme preference or default to light mode
-      const currentTheme = localStorage.getItem("theme") || "light";
-
-      // Apply the current theme
-      if (currentTheme === "dark") {
-        html.classList.add("dark");
-        updateThemeIcons(true);
-      } else {
-        html.classList.remove("dark");
-        updateThemeIcons(false);
-      }
 
       function updateThemeIcons(isDark) {
         if (isDark) {
@@ -648,7 +646,6 @@
 
       function toggleTheme() {
         const isDark = html.classList.contains("dark");
-
         if (isDark) {
           html.classList.remove("dark");
           localStorage.setItem("theme", "light");
@@ -660,57 +657,127 @@
         }
       }
 
+      // Initialize theme when page loads
+      document.addEventListener("DOMContentLoaded", initializeTheme);
+
       // Theme toggle event listeners
-      themeToggle.addEventListener("click", toggleTheme);
-      mobileThemeToggle.addEventListener("click", toggleTheme);
+      if (themeToggle) {
+        themeToggle.addEventListener("click", toggleTheme);
+      }
+      if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener("click", toggleTheme);
+      }
 
       // Mobile Menu Toggle
       const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
 
-      menuBtn.addEventListener("click", () => {
-        const isOpen =
-          mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px";
-
-        if (isOpen) {
-          mobileMenu.style.maxHeight = "0px";
-          menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
-        } else {
-          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
-          menuBtn.innerHTML = '<i class="fa fa-times"></i>';
-        }
-      });
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen =
+            mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px";
+          if (isOpen) {
+            mobileMenu.style.maxHeight = "0px";
+            menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
+          } else {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+            menuBtn.innerHTML = '<i class="fa fa-times"></i>';
+          }
+        });
+      }
 
       // Dropdown Menu
       const dropBtn = document.getElementById("dropBtn");
       const dropIcon = document.getElementById("dropIcon");
       const dropMenu = document.getElementById("dropMenu");
 
-      dropBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const isOpen = dropMenu.classList.contains("opacity-100");
+      if (dropBtn && dropIcon && dropMenu) {
+        dropBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = dropMenu.classList.contains("opacity-100");
+          if (isOpen) {
+            dropMenu.classList.remove("opacity-100", "visible", "scale-100");
+            dropMenu.classList.add("opacity-0", "invisible", "scale-95");
+            dropIcon.classList.remove("rotate-180");
+          } else {
+            dropMenu.classList.remove("opacity-0", "invisible", "scale-95");
+            dropMenu.classList.add("opacity-100", "visible", "scale-100");
+            dropIcon.classList.add("rotate-180");
+          }
+        });
 
-        if (isOpen) {
+        // Close dropdown when clicking outside
+        document.addEventListener("click", () => {
           dropMenu.classList.remove("opacity-100", "visible", "scale-100");
           dropMenu.classList.add("opacity-0", "invisible", "scale-95");
           dropIcon.classList.remove("rotate-180");
-        } else {
-          dropMenu.classList.remove("opacity-0", "invisible", "scale-95");
-          dropMenu.classList.add("opacity-100", "visible", "scale-100");
-          dropIcon.classList.add("rotate-180");
-        }
+        });
+
+        // Prevent dropdown from closing when clicked inside
+        dropMenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      }
+
+      // Form submission handler
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Get form data
+          const formData = new FormData(this);
+          const name = this.querySelector('input[placeholder="Name*"]').value;
+          const email = this.querySelector(
+            'input[placeholder="Email or Phone Number"]'
+          ).value;
+          const password = this.querySelector(
+            'input[placeholder="Password"]'
+          ).value;
+
+          // Simple validation
+          if (!name.trim()) {
+            alert("Please enter your name");
+            return;
+          }
+          if (!password.trim()) {
+            alert("Please enter a password");
+            return;
+          }
+
+          // Simulate account creation
+          const button = this.querySelector('button[type="submit"]');
+          const originalText = button.textContent;
+          button.textContent = "Creating Account...";
+          button.disabled = true;
+
+          setTimeout(() => {
+            alert("Account created successfully! Welcome aboard! 🎉");
+            button.textContent = originalText;
+            button.disabled = false;
+            this.reset();
+          }, 2000);
+        });
+
+      // Add input animation effects
+      const inputs = document.querySelectorAll("input");
+      inputs.forEach((input) => {
+        input.addEventListener("focus", function () {
+          this.parentElement.classList.add("scale-105");
+        });
+        input.addEventListener("blur", function () {
+          this.parentElement.classList.remove("scale-105");
+        });
       });
 
-      // Close dropdown when clicking outside
-      document.addEventListener("click", () => {
-        dropMenu.classList.remove("opacity-100", "visible", "scale-100");
-        dropMenu.classList.add("opacity-0", "invisible", "scale-95");
-        dropIcon.classList.remove("rotate-180");
-      });
-
-      // Prevent dropdown from closing when clicked inside
-      dropMenu.addEventListener("click", (e) => {
-        e.stopPropagation();
+      // Add button click effects
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+          this.classList.add("scale-95");
+          setTimeout(() => {
+            this.classList.remove("scale-95");
+          }, 150);
+        });
       });
 
       // Smooth scroll for anchor links

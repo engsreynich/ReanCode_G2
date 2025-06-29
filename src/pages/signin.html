@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ReanCode - Learn & Create</title>
+    <link rel="stylesheet" href="../input.css" />
+    <link rel="stylesheet" href="../output.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -61,12 +64,10 @@
           <a
             class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse-slow"
             href="../../index.html"
-            >
+          >
             <i class="fas fa-code text-white"></i>
           </a>
-          <a class="text-2xl font-bold"
-            href="../../index.html"      
-          >
+          <a class="text-2xl font-bold" href="../../index.html">
             <span
               class="bg-gradient-to-r from-green-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-[length:200%] animate-gradient"
               >Rean</span
@@ -148,47 +149,46 @@
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center gap-6 ml-8">
           <a
-            href="#"
-            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            href="../../index.html"
+            class="text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
             >Home</a
           >
           <a
-            href="#"
-            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            href="about.html"
+            class="text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
             >About Us</a
           >
           <a
-            href="#"
-            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            href="course.html"
+            class="text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
             >Courses</a
           >
           <a
-            href="#"
-            class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-            >Contact</a
+            href="contact.html"
+            class="text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >Contact Us</a
           >
 
-          <!-- Dark Mode Toggle -->
+          <!-- Theme Toggle -->
           <button
             id="themeToggle"
-            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
-            aria-label="Toggle dark mode"
+            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+            aria-label="Toggle theme"
           >
             <i
               id="themeIcon"
-              class="fas fa-moon text-gray-600 dark:text-gray-300"
+              class="fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300"
             ></i>
           </button>
-
           <button
-            class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-white rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors theme-transition"
           >
-            Sign In
+            <a href="signin.html">Sign In</a>
           </button>
           <button
             class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-2 px-4 transition-all duration-200 transform hover:scale-105"
           >
-            Create Account
+            <a href="signup.html">Create Account</a>
           </button>
         </nav>
 
@@ -208,24 +208,24 @@
       >
         <nav class="flex flex-col px-4 pb-4 space-y-2">
           <a
-            href="/index.html"
+            href="index.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Home</a
           >
           <a
-            href="/index.html"
+            href="about.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >About Us</a
           >
           <a
-            href="./Course.html"
+            href="course.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Courses</a
           >
           <a
-            href="./Contact.html"
+            href="contact.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-            >Contact</a
+            >Contact Us</a
           >
 
           <!-- Mobile Dark Mode Toggle -->
@@ -240,12 +240,12 @@
           <button
             class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
-            Sign In
+            <a href="signin.html">Sign In</a>
           </button>
           <button
             class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200"
           >
-            Create Account
+            <a href="signup.html">Create Account</a>
           </button>
         </nav>
       </div>
@@ -308,12 +308,10 @@
               <a
                 class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse-slow"
                 href="../../index.html"
-                >
+              >
                 <i class="fas fa-code text-white"></i>
               </a>
-              <a class="text-2xl font-bold"
-                href="../../index.html"      
-              >
+              <a class="text-2xl font-bold" href="../../index.html">
                 <span
                   class="bg-gradient-to-r from-green-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-[length:200%] animate-gradient"
                   >Rean</span
