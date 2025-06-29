@@ -139,96 +139,192 @@
     <div id="scrollProgress" class="scroll-indicator"></div>
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg theme-transition">
-        <div class="max-w-7xl mx-auto flex items-center px-4 py-3">
-            <!-- Logo -->
-            <div class="flex items-center gap-3 mr-8">
-                <a class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse"
-                    href="../../index.html">
-                    <i class="fas fa-code text-white"></i>
-                </a>
-                <a class="text-2xl font-bold"
-                    href="../../index.html">
-                    <span class="gradient-text">Rean</span>
-                    <span class="text-gray-800 dark:text-white theme-transition">Code</span>
-                </a>
-            </div>
-
-            <!-- Search Bar -->
-            <div class="relative flex-1 max-w-lg">
-                <div class="flex items-center bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-2xl shadow-sm theme-transition">
-                    <i class="fas fa-search text-gray-400 dark:text-gray-300 mx-4"></i>
-                    <input
-                        type="text"
-                        placeholder="Want to learn?"
-                        class="flex-1 bg-transparent text-sm sm:text-base placeholder-gray-400 dark:placeholder-gray-300 dark:text-white focus:outline-none py-3 theme-transition"
-                    />
-                    <button
-                        id="dropdownBtn"
-                        class="flex items-center gap-1 px-4 py-3 text-teal-500 dark:text-teal-400 font-medium border-l border-gray-100 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
-                    >
-                        <a href="src/pages/course.html" class="hidden sm:inline">Explore</a>
-                        <i id="dropdownIcon" class="fas fa-chevron-down transition-transform duration-200"></i>
-                    </button>
-                </div>
-
-                <!-- Dropdown Menu -->
-                <nav id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg py-2 z-10 opacity-0 invisible transition-all duration-200 transform scale-95 theme-transition">
-                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">All Categories</a>
-                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">Technology</a>
-                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">Business</a>
-                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">Design</a>
-                    <a href="#" class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors">Marketing</a>
-                </nav>
-            </div>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center gap-6 ml-8">
-                <a href="#home" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Home</a>
-                <a href="#about" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">About Us</a>
-                <a href="#courses" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Courses</a>
-                <a href="#contact" class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Contact</a>
-                
-                <!-- Theme Toggle -->
-                <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Toggle theme">
-                    <i id="themeIcon" class="fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300"></i>
-                </button>
-                
-                <button class="border border-gray-300 dark:border-gray-600 dark:text-white rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors theme-transition">
-                    Sign In
-                </button>
-                <button class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-2 px-4 transition-all duration-200 transform hover:scale-105">
-                    Create Account
-                </button>
-            </nav>
-
-            <!-- Mobile Menu Button & Theme Toggle -->
-            <div class="flex items-center gap-2 lg:hidden ml-4">
-                <button id="mobileThemeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Toggle theme">
-                    <i id="mobileThemeIcon" class="fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300"></i>
-                </button>
-                <button id="menuBtn" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+    <header
+      class="sticky top-0 z-50 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg theme-transition"
+    > 
+      <div class="max-w-7xl mx-auto flex items-center px-4 py-3">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mr-8">
+          <a
+            class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse-slow"
+            href="../../index.html"
+            >
+            <i class="fas fa-code text-white"></i>
+          </a>
+          <a class="text-2xl font-bold"
+            href="../../index.html"      
+          >
+            <span
+              class="bg-gradient-to-r from-green-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-[length:200%] animate-gradient"
+              >Rean</span
+            ><span class="text-gray-800 dark:text-gray-200">Code</span>
+          </a>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 theme-transition">
-            <nav class="flex flex-col px-4 pb-4 space-y-2">
-                <a href="#home" class="py-3 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Home</a>
-                <a href="#about" class="py-3 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">About Us</a>
-                <a href="#courses" class="py-3 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Courses</a>
-                <a href="#contact" class="py-3 hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors">Contact</a>
-                <button class="w-full border border-gray-300 dark:border-gray-600 dark:text-white rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors theme-transition">
-                    Sign In
-                </button>
-                <button class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200">
-                    Create Account
-                </button>
-            </nav>
+        <!-- Search Bar -->
+        <div class="relative flex-1 max-w-lg">
+          <div
+            class="flex items-center bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-2xl shadow-sm theme-transition"
+          >
+            <i class="fas fa-search text-gray-400 dark:text-gray-300 mx-4"></i>
+            <input
+              type="text"
+              placeholder="Want to learn?"
+              class="flex-1 bg-transparent text-sm sm:text-base placeholder-gray-400 dark:placeholder-gray-300 dark:text-white focus:outline-none py-3 theme-transition"
+            />
+            <button
+              id="dropdownBtn"
+              class="flex items-center gap-1 px-4 py-3 text-teal-500 dark:text-teal-400 font-medium border-l border-gray-100 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+            >
+              <span class="hidden sm:inline">Explore</span>
+              <i
+                id="dropdownIcon"
+                class="fas fa-chevron-down transition-transform duration-200"
+              ></i>
+            </button>
+          </div>
+
+          <!-- Dropdown Menu -->
+          <nav
+            id="dropdownMenu"
+            class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg py-2 z-10 opacity-0 invisible transition-all duration-200 transform scale-95 theme-transition"
+          >
+            <a
+              href="course.html"
+              class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors"
+              >HTML</a
+            >
+            <a
+              href="course.html"
+              class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors"
+              >CSS</a
+            >
+            <a
+              href="course.html"
+              class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors"
+              >JavaScript</a
+            >
+            <a
+              href="course.html"
+              class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors"
+              >Java</a
+            >
+            <a
+              href="course.html"
+              class="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white transition-colors"
+              >React</a
+            >
+          </nav>
         </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-6 ml-8">
+          <a
+            href="../../index.html"
+            class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >About Us</a
+          >
+          <a
+            href="course.html"
+            class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >Courses</a
+          >
+          <a
+            href="contact.html"
+            class="hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >Contact Us</a
+          >
+
+          <!-- Theme Toggle -->
+          <button
+            id="themeToggle"
+            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+            aria-label="Toggle theme"
+          >
+            <i
+              id="themeIcon"
+              class="fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300"
+            ></i>
+          </button>
+
+          <button
+            class="border border-gray-300 dark:border-gray-600 dark:text-white rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors theme-transition"
+            >
+            <a href="signin.html">Sign In</a>
+          </button>
+          <button
+            class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-2 px-4 transition-all duration-200 transform hover:scale-105"
+          >
+            <a href="signup.html">Create Account</a>
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Button & Theme Toggle -->
+        <div class="flex items-center gap-2 lg:hidden ml-4">
+          <button
+            id="menuBtn"
+            class="text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 theme-transition"
+      >
+        <nav class="flex flex-col px-4 pb-4 space-y-2">
+          <a
+            href="../../index.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >About Us</a
+          >
+          <a
+            href="course.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Courses</a
+          >
+          <a
+            href="contact.html"
+            class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >Contact Us</a
+          >
+
+          <!-- Mobile Dark Mode Toggle -->
+          <button
+            id="mobileThemeToggle"
+            class="flex items-center gap-3 py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+          >
+            <i id="mobileThemeIcon" class="fas fa-moon"></i>
+            <span id="mobileThemeText">Dark Mode</span>
+          </button>
+
+          <button
+            class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            <a href="signin.html">Sign In</a>
+          </button>
+          <button
+            class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200"
+          >
+            <a href="signup.html">Create Account</a>
+          </button>
+        </nav>
+      </div>
     </header>
+
 
     <!-- Main Content -->
     <main class="flex-1">
@@ -262,14 +358,12 @@
                                 </p>
                             </div>
                             <div>
-                                <a href="#" 
-                                    class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
-                                    id="joinUsLink"
-                                    onclick="joinUsAction(event)"
+                                <a href="signup.html" 
+                                    class="bg-white py-2 px-4 hover:scale-105 duration-1000 tra rounded-3xl text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
                                     >
-                                        Join us 
-                                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
-                                    </a>
+                                    Join us 
+                                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -360,7 +454,7 @@
                         <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
                             It's hard to measure coding skills across different regions. Our platform offers consistent, high-quality training to help learners stay on the same level....
                         </p>
-                        <a href="#" class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group">
+                        <a href="about.html" class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group">
                             Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
                         </a>
                     </div>
@@ -375,7 +469,7 @@
                             There's no extra cost to access learning materials. With our platform, you can learn coding without paying for books or traveling to a class.... 
                         </p>
                         
-                        <a href="#" 
+                        <a href="about.html" 
                         class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
                         id="joinUsLink"
                         onclick="joinUsAction(event)"
@@ -394,7 +488,7 @@
                         <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
                             Everyone learns differently. Our e-learning platform lets you choose your learning pace and coding track—whether it's web development, Python, or data science....Read
                         </p>
-                        <a href="#" 
+                        <a href="about.html" 
                         class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
                         id="joinUsLink"
                         onclick="joinUsAction(event)"
@@ -412,7 +506,7 @@
                         <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
                             We offer free and low-cost courses. No printing or transport costs—just your device and internet, and you can start coding.... 
                         </p>
-                        <a href="#" 
+                        <a href="about.html" 
                         class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
                         id="joinUsLink"
                         onclick="joinUsAction(event)"
@@ -431,7 +525,7 @@
                         <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
                             Students love our hands-on coding exercises and friendly interface. Many return for advanced courses after starting with the basics. ... 
                         </p>
-                        <a href="#" 
+                        <a href="about.html" 
                         class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
                         id="joinUsLink"
                         onclick="joinUsAction(event)"
@@ -450,7 +544,7 @@
                         <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed theme-transition">
                             Learn coding through video lessons, interactive quizzes, and coding editors built into the platform. Our method makes it fun and easier to understand. ... 
                         </p>
-                        <a href="#" 
+                        <a href="about.html" 
                         class="text-green-500 dark:text-green-400 font-semibold hover:text-green-600 dark:hover:text-green-300 transition-colors inline-flex items-center group"
                         id="joinUsLink"
                         onclick="joinUsAction(event)"
@@ -522,7 +616,7 @@
                             </div>
                             <h3 class="font-bold text-lg mb-2 dark:text-white dark:hover:text-[#20B486] theme-transition">HIEM SREYNIT</h3>
                             <div class="flex justify-center space-x-3">
-                                <a href="https://github.com/engsreynich" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                <a href="https://github.com/hiemsreynit" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
                                     <i class="fab fa-github text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white"></i>
                                 </a>
                                 <a href="https://www.facebook.com/hiem.sreynit.9" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
@@ -540,7 +634,7 @@
                             </div>
                             <h3 class="font-bold text-lg mb-2 dark:text-white dark:hover:text-[#20B486] theme-transition">MOUNG MEYNEANG</h3>
                             <div class="flex justify-center space-x-3">
-                                <a href="https://github.com/engsreynich" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
+                                <a href="https://github.com/meyneangmoung" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
                                     <i class="fab fa-github text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white"></i>
                                 </a>
                                 <a href="https://www.facebook.com/share/1CULwtwKDp/" target="_blank" class="cursor-pointer transition-colors transform hover:scale-125">
@@ -624,14 +718,19 @@
             <div class="flex flex-col lg:flex-row justify-between gap-12">
                 <div class="space-y-6">
                     <div class="flex items-center gap-3 mr-8">
-                        <a class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse"
-                            href="../../index.html">
+                        <a
+                            class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse-slow"
+                            href="../../index.html"
+                            >
                             <i class="fas fa-code text-white"></i>
                         </a>
                         <a class="text-2xl font-bold"
-                            href="../../index.html">
-                            <span class="gradient-text">Rean</span>
-                            <span class="text-white dark:text-text-dark theme-transition">Code</span>
+                            href="../../index.html"      
+                        >
+                            <span
+                            class="bg-gradient-to-r from-green-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-[length:200%] animate-gradient"
+                            >Rean</span
+                            ><span class="text-gray-200">Code</span>
                         </a>
                     </div>
                     <p class="max-w-sm text-sm leading-relaxed">

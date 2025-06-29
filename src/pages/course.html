@@ -5,13 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Courses</title>
     <link rel="stylesheet" href="../output.css" />
-    <link rel="stylesheet" href="../input.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
   </head>
+  <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+              float: "float 3s ease-in-out infinite",
+              gradient: "gradient 3s linear infinite",
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "bounce-slow": "bounce 2s infinite",
+              glow: "glow 2s ease-in-out infinite alternate",
+              typing:
+                "typing 3.5s steps(40, end), blink-caret .75s step-end infinite",
+              "slide-up": "slideUp 0.6s ease-out",
+              "fade-in": "fadeIn 0.8s ease-out",
+              sparkle: "sparkle 1s ease-out forwards",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              gradient: {
+                "0%": { "background-position": "0% center" },
+                "100%": { "background-position": "200% center" },
+              },
+              glow: {
+                "0%": { boxShadow: "0 0 20px rgba(168, 85, 247, 0.4)" },
+                "100%": { boxShadow: "0 0 40px rgba(168, 85, 247, 0.8)" },
+              },
+              typing: {
+                from: { width: "0" },
+                to: { width: "100%" },
+              },
+              "blink-caret": {
+                "from, to": { borderColor: "transparent" },
+                "50%": { borderColor: "#10b981" },
+              },
+              slideUp: {
+                from: { transform: "translateY(30px)", opacity: "0" },
+                to: { transform: "translateY(0)", opacity: "1" },
+              },
+              fadeIn: {
+                from: { opacity: "0" },
+                to: { opacity: "1" },
+              },
+              sparkle: {
+                "0%": { transform: "scale(0) rotate(0deg)", opacity: "1" },
+                "50%": { transform: "scale(1) rotate(180deg)", opacity: "1" },
+                "100%": { transform: "scale(0) rotate(360deg)", opacity: "0" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .theme-transition {
+        transition: background-color 0.3s ease, color 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .gradient-text {
+        background: linear-gradient(to right, #10b981, #8b5cf6, #10b981);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient 3s linear infinite;
+      }
+
+      .dark {
+        color-scheme: dark;
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .code-window {
+        background: linear-gradient(145deg, #1e293b, #0f172a);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .hero-bg {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #667eea 100%
+        );
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+
+      .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: #fbbf24;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: sparkle 0.6s ease-out forwards;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .scroll-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, #10b981, #8b5cf6);
+        transform-origin: left;
+        transform: scaleX(0);
+        z-index: 9999;
+        transition: transform 0.1s ease;
+      }
+    </style>
   <body>
+    <div id="scrollProgress" class="scroll-indicator"></div>
     <header
       class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md transition-colors duration-300"
     >
@@ -47,7 +179,7 @@
               id="dropBtn"
               class="flex items-center gap-1 px-4 py-3 text-teal-500 dark:text-teal-400 font-medium border-l border-gray-100 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
             >
-              <a href="./course.html" class="hidden sm:inline">Explore</a>
+              <a href="course.html" class="hidden sm:inline">Explore</a>
               <i
                 id="dropIcon"
                 class="fa fa-chevron-down transition-transform duration-200"
@@ -78,11 +210,6 @@
             <a
               href="#"
               class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
-              >Bootstrap</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
               >React</a
             >
             <a
@@ -90,40 +217,30 @@
               class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
               >Java</a
             >
-            <a
-              href="#"
-              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
-              >Python</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
-              >NextJs</a
-            >
           </nav>
         </div>
 
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center gap-6 ml-8">
           <a
-            href="#"
+            href="../../index.html"
             class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Home</a
           >
           <a
-            href="./about.html"
+            href="about.html"
             class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >About Us</a
           >
           <a
-            href="./course.html"
+            href="course.html"
             class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Courses</a
           >
           <a
-            href="./contact.html"
+            href="contact.html"
             class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-            >Contact</a
+            >Contact Us</a
           >
 
           <!-- Dark Mode Toggle -->
@@ -141,12 +258,12 @@
           <button
             class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
-            Sign In
+            <a href="signin.html">Sign In</a>
           </button>
           <button
             class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-2 px-4 transition-all duration-200 transform hover:scale-105"
           >
-            Create Account
+            <a href="signup.html">Create Account</a>
           </button>
         </nav>
 
@@ -166,24 +283,24 @@
       >
         <nav class="flex flex-col px-4 pb-4 space-y-2">
           <a
-            href="/index.html"
+            href="../../index.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Home</a
           >
           <a
-            href="/index.html"
+            href="about.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >About Us</a
           >
           <a
-            href="./Course.html"
+            href="Course.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Courses</a
           >
           <a
-            href="./Contact.html"
+            href="Contact.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-            >Contact</a
+            >Contact Us</a
           >
 
           <!-- Mobile Dark Mode Toggle -->
@@ -198,12 +315,12 @@
           <button
             class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
-            Sign In
+            <a href="signin.html">Sign In</a>
           </button>
           <button
             class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200"
           >
-            Create Account
+            <a href="signup.html">Create Account</a>
           </button>
         </nav>
       </div>
@@ -250,7 +367,7 @@
                 Build your skills and your future — one lesson at a time.
               </p>
               <button
-                class="bg-secondary-light text-text-dark px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition-all duration-300 transform hover:scale-105"
+                class="bg-secondary-light text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition-all duration-300 transform hover:scale-105"
               >
                 Get Started
               </button>
@@ -816,6 +933,396 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Initialize theme on page load (before DOM is ready)
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
+
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+
+      // Theme Management
+      let currentTheme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+
+      function updateThemeIcons() {
+        const themeIcon = document.getElementById("themeIcon");
+        const mobileThemeIcon = document.getElementById("mobileThemeIcon");
+
+        if (currentTheme === "dark") {
+          themeIcon.className =
+            "fas fa-sun w-5 h-5 text-gray-600 dark:text-gray-300";
+          mobileThemeIcon.className =
+            "fas fa-sun w-5 h-5 text-gray-600 dark:text-gray-300";
+        } else {
+          themeIcon.className =
+            "fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300";
+          mobileThemeIcon.className =
+            "fas fa-moon w-5 h-5 text-gray-600 dark:text-gray-300";
+        }
+      }
+
+      function toggleTheme() {
+        currentTheme = currentTheme === "light" ? "dark" : "light";
+
+        if (currentTheme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+
+        localStorage.setItem("theme", currentTheme);
+        updateThemeIcons();
+      }
+
+      // Mobile Menu Management
+      let isMobileMenuOpen = false;
+
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuBtn = document.getElementById("menuBtn");
+
+        isMobileMenuOpen = !isMobileMenuOpen;
+
+        if (isMobileMenuOpen) {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+          mobileMenu.style.maxHeight = "0px";
+          menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      }
+
+      // Dropdown Management
+      let isDropdownOpen = false;
+
+      function toggleDropdown(event) {
+        event.stopPropagation();
+        const dropMenu = document.getElementById("dropdownMenu");
+        const dropIcon = document.getElementById("dropdownIcon");
+
+        isDropdownOpen = !isDropdownOpen;
+
+        if (isDropdownOpen) {
+          dropMenu.classList.remove("opacity-0", "invisible", "scale-95");
+          dropMenu.classList.add("opacity-100", "visible", "scale-100");
+          dropIcon.classList.add("rotate-180");
+        } else {
+          dropMenu.classList.remove("opacity-100", "visible", "scale-100");
+          dropMenu.classList.add("opacity-0", "invisible", "scale-95");
+          dropIcon.classList.remove("rotate-180");
+        }
+      }
+
+      function closeDropdown() {
+        if (isDropdownOpen) {
+          const dropMenu = document.getElementById("dropdownMenu");
+          const dropIcon = document.getElementById("dropdownIcon");
+
+          dropMenu.classList.remove("opacity-100", "visible", "scale-100");
+          dropMenu.classList.add("opacity-0", "invisible", "scale-95");
+          dropIcon.classList.remove("rotate-180");
+          isDropdownOpen = false;
+        }
+      }
+
+      // Typing animation for developer text
+      function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = "";
+        element.style.borderRight = "2px solid #10b981";
+
+        function type() {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          } else {
+            // Blinking cursor effect
+            setInterval(() => {
+              element.style.borderRight =
+                element.style.borderRight === "2px solid transparent"
+                  ? "2px solid #10b981"
+                  : "2px solid transparent";
+            }, 750);
+          }
+        }
+        type();
+      }
+
+      // Counter animation
+      function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+
+        function updateCounter() {
+          start += increment;
+          if (start < target) {
+            element.textContent = Math.floor(start).toLocaleString();
+            requestAnimationFrame(updateCounter);
+          } else {
+            element.textContent = target.toLocaleString();
+          }
+        }
+        updateCounter();
+      }
+
+      // Create floating particles for hero section
+      function createHeroParticles() {
+        const particlesContainer = document.getElementById("heroParticles");
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.className =
+            "absolute w-1 h-1 bg-white rounded-full opacity-20";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 3 + "s";
+          particle.style.animation = "float 6s ease-in-out infinite";
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // Sparkle Effect for buttons
+      function createSparkles(element) {
+        const rect = element.getBoundingClientRect();
+        const sparkleCount = 8;
+
+        for (let i = 0; i < sparkleCount; i++) {
+          const sparkle = document.createElement("div");
+          sparkle.className =
+            "fixed w-2 h-2 bg-yellow-400 rounded-full pointer-events-none z-50";
+          sparkle.style.left = rect.left + rect.width / 2 + "px";
+          sparkle.style.top = rect.top + rect.height / 2 + "px";
+
+          document.body.appendChild(sparkle);
+
+          const angle = (i / sparkleCount) * Math.PI * 2;
+          const distance = 40 + Math.random() * 40;
+          const duration = 600 + Math.random() * 400;
+
+          sparkle.animate(
+            [
+              {
+                transform: "translate(0, 0) scale(0)",
+                opacity: "1",
+              },
+              {
+                transform: `translate(${Math.cos(angle) * distance}px, ${
+                  Math.sin(angle) * distance
+                }px) scale(1)`,
+                opacity: "0",
+              },
+            ],
+            {
+              duration: duration,
+              easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            }
+          ).onfinish = () => sparkle.remove();
+        }
+      }
+
+      // Scroll progress indicator
+      function updateScrollProgress() {
+        const scrollProgress = document.getElementById("scrollProgress");
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+
+        scrollProgress.style.transform = `scaleX(${scrollPercent})`;
+      }
+
+      // Initialize everything when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Update theme icons on load
+        updateThemeIcons();
+
+        // Setup theme toggle event listeners
+        document
+          .getElementById("themeToggle")
+          .addEventListener("click", toggleTheme);
+        document
+          .getElementById("mobileThemeToggle")
+          .addEventListener("click", toggleTheme);
+
+        // Setup mobile menu
+        document
+          .getElementById("menuBtn")
+          .addEventListener("click", toggleMobileMenu);
+
+        // Setup dropdown
+        document
+          .getElementById("dropdownBtn")
+          .addEventListener("click", toggleDropdown);
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (event) {
+          const dropBtn = document.getElementById("dropdownBtn");
+          const dropMenu = document.getElementById("dropdownMenu");
+
+          if (
+            !dropBtn.contains(event.target) &&
+            !dropMenu.contains(event.target)
+          ) {
+            closeDropdown();
+          }
+        });
+
+        // Prevent dropdown from closing when clicked inside
+        document
+          .getElementById("dropdownMenu")
+          .addEventListener("click", function (event) {
+            event.stopPropagation();
+          });
+
+        // Start typing animation after a short delay
+        setTimeout(() => {
+          const developerElement = document.getElementById("developer-text");
+          if (developerElement) {
+            typeWriter(developerElement, "developer", 150);
+          }
+        }, 1000);
+
+        // Animate counters when they come into view
+        const counters = document.querySelectorAll(".counter");
+        const observerOptions = {
+          threshold: 0.5,
+          rootMargin: "0px 0px -100px 0px",
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const target = parseInt(entry.target.dataset.target);
+              animateCounter(entry.target, target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        counters.forEach((counter) => {
+          counterObserver.observe(counter);
+        });
+
+        // Create hero particles
+        createHeroParticles();
+
+        // Setup button sparkle effects
+        const sparkleButtons = [
+          "startLearningBtn",
+          "viewCoursesBtn",
+          "registerBtn",
+          "runCode",
+        ];
+
+        sparkleButtons.forEach((buttonId) => {
+          const button = document.getElementById(buttonId);
+          if (button) {
+            button.addEventListener("click", function (e) {
+              e.preventDefault();
+              createSparkles(this);
+              setTimeout(() => {
+                if (buttonId === "runCode") {
+                  alert(
+                    "🎉 Code executed successfully! Welcome to the developer world!"
+                  );
+                } else if (buttonId === "registerBtn") {
+                  alert("🎉 Welcome to ReanCode! Registration coming soon!");
+                } else {
+                  alert("🚀 Exciting! This feature is coming soon!");
+                }
+              }, 300);
+            });
+          }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+
+              // Close mobile menu if open
+              if (isMobileMenuOpen) {
+                toggleMobileMenu();
+              }
+            }
+          });
+        });
+
+        // Add loading animation
+        document.body.style.opacity = "0";
+        document.body.style.transition = "opacity 0.3s ease";
+        setTimeout(() => {
+          document.body.style.opacity = "1";
+        }, 100);
+
+        // Setup scroll progress indicator
+        window.addEventListener("scroll", updateScrollProgress);
+      });
+
+      // Handle system theme changes
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+          if (!localStorage.getItem("theme")) {
+            currentTheme = e.matches ? "dark" : "light";
+
+            if (currentTheme === "dark") {
+              document.documentElement.classList.add("dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+            }
+
+            updateThemeIcons();
+          }
+        });
+
+      // Parallax effect for floating elements
+      window.addEventListener("scroll", function () {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll(".animate-float");
+
+        parallaxElements.forEach((element, index) => {
+          const speed = 0.02 + index * 0.01;
+          element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+
+      // Add intersection observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-slide-up");
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll(".bg-white, .bg-gray-50").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
   </body>
   <script src="../index.js"></script>
 </html>
