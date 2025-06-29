@@ -2858,6 +2858,11 @@
       color: var(--color-teal-400);
     }
   }
+  .dark\:text-text-dark {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-text-dark);
+    }
+  }
   .dark\:text-white {
     @media (prefers-color-scheme: dark) {
       color: var(--color-white);
