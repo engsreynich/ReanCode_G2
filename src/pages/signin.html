@@ -12,12 +12,9 @@
       content="coding, learn, programming, web development, coding platform"
     />
     <meta name="author" content="ReanCode" />
-    <link rel="icon" type="logo" href="../assets/logo.svg">
-    <title>ReanCode - Sign In</title>
-    <link rel="stylesheet" href="../input.css" />
-    <link rel="stylesheet" href="../output.css" />
+    <link rel="icon" type="logo" href="../assets/logo.svg" />
+    <title>ReanCode - Create Account</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -59,6 +56,35 @@
       .hero-gradient {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .dark .gradient-bg {
+        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+      }
+      .card-shadow {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .dark .card-shadow {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4),
+          0 10px 10px -5px rgba(0, 0, 0, 0.2);
+      }
+      .input-focus:focus {
+        border-color: #10b981;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+      }
+      .btn-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+      }
+      .google-btn:hover {
+        background-color: #f9fafb;
+        transform: translateY(-1px);
+      }
+      .dark .google-btn:hover {
+        background-color: #374151;
+      }
     </style>
   </head>
   <body
@@ -71,18 +97,17 @@
       <div class="max-w-7xl mx-auto flex items-center px-4 py-3">
         <!-- Logo -->
         <div class="flex items-center gap-3 mr-8">
-          <a
+          <div
             class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse-slow"
-            href="../../index.html"
           >
             <i class="fas fa-code text-white"></i>
-          </a>
-          <a class="text-2xl font-bold" href="../../index.html">
+          </div>
+          <span class="text-2xl font-bold">
             <span
               class="bg-gradient-to-r from-green-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-[length:200%] animate-gradient"
               >Rean</span
             ><span class="text-gray-800 dark:text-gray-200">Code</span>
-          </a>
+          </span>
         </div>
 
         <!-- Search Bar -->
@@ -107,7 +132,6 @@
               ></i>
             </button>
           </div>
-
           <!-- Dropdown Menu -->
           <nav
             id="dropMenu"
@@ -203,12 +227,54 @@
         </nav>
 
         <!-- Mobile Menu Button -->
-        <button
-          id="menuBtn"
-          class="lg:hidden ml-4 text-2xl text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 border-t border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800"
         >
-          <i class="fa fa-bars"></i>
-        </button>
+          <nav class="flex flex-col px-4 pb-4 space-y-2">
+            <a
+              href="index.html"
+              class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >About Us</a
+            >
+            <a
+              href="course.html"
+              class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >Courses</a
+            >
+            <a
+              href="contact.html"
+              class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              >Contact Us</a
+            >
+
+            <!-- Mobile Dark Mode Toggle -->
+            <button
+              id="mobileThemeToggle"
+              class="flex items-center gap-3 py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >
+              <i id="mobileThemeIcon" class="fas fa-moon"></i>
+              <span id="mobileThemeText">Dark Mode</span>
+            </button>
+
+            <button
+              class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            >
+              <a href="signin.html">Sign In</a>
+            </button>
+            <button
+              class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200"
+            >
+              <a href="signup.html">Create Account</a>
+            </button>
+          </nav>
+        </div>
       </div>
 
       <!-- Mobile Menu -->
@@ -218,12 +284,12 @@
       >
         <nav class="flex flex-col px-4 pb-4 space-y-2">
           <a
-            href="index.html"
+            href="/index.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Home</a
           >
           <a
-            href="about.html"
+            href="/index.html"
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >About Us</a
           >
@@ -237,7 +303,6 @@
             class="py-3 text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
             >Contact Us</a
           >
-
           <!-- Mobile Dark Mode Toggle -->
           <button
             id="mobileThemeToggle"
@@ -246,16 +311,15 @@
             <i id="mobileThemeIcon" class="fas fa-moon"></i>
             <span id="mobileThemeText">Dark Mode</span>
           </button>
-
           <button
             class="w-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg py-3 mt-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
-            <a href="signin.html">Sign In</a>
+            Sign In
           </button>
           <button
             class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg py-3 transition-all duration-200"
           >
-            <a href="signup.html">Create Account</a>
+            Create Account
           </button>
         </nav>
       </div>
@@ -296,7 +360,7 @@
               type="submit"
               class="bg-green-400 text-white px-6 py-2 rounded-md hover:bg-teal-600 hover:shadow-lg hover:scale-105 transition duration-200 ease-in-out transform"
             >
-              Log In
+              <a href="../../index.html">Log In</a>
             </button>
 
             <a href="" class="text-teal-500 text-sm hover:underline"
@@ -314,19 +378,13 @@
         <div class="flex flex-col lg:flex-row justify-between gap-12">
           <!-- Logo/Tagline -->
           <div class="space-y-6">
-            <div class="flex items-center gap-3 mr-8">
-              <a
-                class="w-10 h-10 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center animate-pulse-slow"
-                href="../../index.html"
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-green-400 to-purple-500 rounded-lg flex items-center justify-center"
               >
-                <i class="fas fa-code text-white"></i>
-              </a>
-              <a class="text-2xl font-bold" href="../../index.html">
-                <span
-                  class="bg-gradient-to-r from-green-400 via-purple-500 to-green-400 bg-clip-text text-transparent bg-[length:200%] animate-gradient"
-                  >Rean</span
-                ><span class="text-gray-200">Code</span>
-              </a>
+                <i class="fas fa-code text-white text-xl"></i>
+              </div>
+              <span class="text-white text-2xl font-bold">ReanCode</span>
             </div>
             <p class="max-w-sm text-sm leading-relaxed">
               Empowering the next generation of developers through innovative
@@ -391,7 +449,6 @@
                 </li>
               </ul>
             </div>
-
             <div>
               <h3
                 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
@@ -421,7 +478,6 @@
                 </li>
               </ul>
             </div>
-
             <div>
               <h3
                 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
@@ -451,7 +507,6 @@
                 </li>
               </ul>
             </div>
-
             <div>
               <h3
                 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider"
@@ -484,7 +539,6 @@
           </div>
         </div>
       </div>
-
       <div
         class="bg-gray-800 dark:bg-gray-900 border-t border-gray-700 dark:border-gray-800 transition-colors duration-300"
       >
@@ -501,6 +555,22 @@
 
     <!-- ============ SCRIPTS ============ -->
     <script>
+      // Initialize theme on page load
+      function initializeTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add("dark");
+          updateThemeIcons(true);
+        } else {
+          document.documentElement.classList.remove("dark");
+          updateThemeIcons(false);
+        }
+      }
+
       // Dark Mode Functionality
       const themeToggle = document.getElementById("themeToggle");
       const mobileThemeToggle = document.getElementById("mobileThemeToggle");
@@ -508,18 +578,6 @@
       const mobileThemeIcon = document.getElementById("mobileThemeIcon");
       const mobileThemeText = document.getElementById("mobileThemeText");
       const html = document.documentElement;
-
-      // Check for saved theme preference or default to light mode
-      const currentTheme = localStorage.getItem("theme") || "light";
-
-      // Apply the current theme
-      if (currentTheme === "dark") {
-        html.classList.add("dark");
-        updateThemeIcons(true);
-      } else {
-        html.classList.remove("dark");
-        updateThemeIcons(false);
-      }
 
       function updateThemeIcons(isDark) {
         if (isDark) {
@@ -535,7 +593,6 @@
 
       function toggleTheme() {
         const isDark = html.classList.contains("dark");
-
         if (isDark) {
           html.classList.remove("dark");
           localStorage.setItem("theme", "light");
@@ -547,57 +604,127 @@
         }
       }
 
+      // Initialize theme when page loads
+      document.addEventListener("DOMContentLoaded", initializeTheme);
+
       // Theme toggle event listeners
-      themeToggle.addEventListener("click", toggleTheme);
-      mobileThemeToggle.addEventListener("click", toggleTheme);
+      if (themeToggle) {
+        themeToggle.addEventListener("click", toggleTheme);
+      }
+      if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener("click", toggleTheme);
+      }
 
       // Mobile Menu Toggle
       const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
 
-      menuBtn.addEventListener("click", () => {
-        const isOpen =
-          mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px";
-
-        if (isOpen) {
-          mobileMenu.style.maxHeight = "0px";
-          menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
-        } else {
-          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
-          menuBtn.innerHTML = '<i class="fa fa-times"></i>';
-        }
-      });
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen =
+            mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px";
+          if (isOpen) {
+            mobileMenu.style.maxHeight = "0px";
+            menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
+          } else {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+            menuBtn.innerHTML = '<i class="fa fa-times"></i>';
+          }
+        });
+      }
 
       // Dropdown Menu
       const dropBtn = document.getElementById("dropBtn");
       const dropIcon = document.getElementById("dropIcon");
       const dropMenu = document.getElementById("dropMenu");
 
-      dropBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const isOpen = dropMenu.classList.contains("opacity-100");
+      if (dropBtn && dropIcon && dropMenu) {
+        dropBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = dropMenu.classList.contains("opacity-100");
+          if (isOpen) {
+            dropMenu.classList.remove("opacity-100", "visible", "scale-100");
+            dropMenu.classList.add("opacity-0", "invisible", "scale-95");
+            dropIcon.classList.remove("rotate-180");
+          } else {
+            dropMenu.classList.remove("opacity-0", "invisible", "scale-95");
+            dropMenu.classList.add("opacity-100", "visible", "scale-100");
+            dropIcon.classList.add("rotate-180");
+          }
+        });
 
-        if (isOpen) {
+        // Close dropdown when clicking outside
+        document.addEventListener("click", () => {
           dropMenu.classList.remove("opacity-100", "visible", "scale-100");
           dropMenu.classList.add("opacity-0", "invisible", "scale-95");
           dropIcon.classList.remove("rotate-180");
-        } else {
-          dropMenu.classList.remove("opacity-0", "invisible", "scale-95");
-          dropMenu.classList.add("opacity-100", "visible", "scale-100");
-          dropIcon.classList.add("rotate-180");
-        }
+        });
+
+        // Prevent dropdown from closing when clicked inside
+        dropMenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      }
+
+      // Form submission handler
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Get form data
+          const formData = new FormData(this);
+          const name = this.querySelector('input[placeholder="Name*"]').value;
+          const email = this.querySelector(
+            'input[placeholder="Email or Phone Number"]'
+          ).value;
+          const password = this.querySelector(
+            'input[placeholder="Password"]'
+          ).value;
+
+          // Simple validation
+          if (!name.trim()) {
+            alert("Please enter your name");
+            return;
+          }
+          if (!password.trim()) {
+            alert("Please enter a password");
+            return;
+          }
+
+          // Simulate account creation
+          const button = this.querySelector('button[type="submit"]');
+          const originalText = button.textContent;
+          button.textContent = "Creating Account...";
+          button.disabled = true;
+
+          setTimeout(() => {
+            alert("Account created successfully! Welcome aboard! 🎉");
+            button.textContent = originalText;
+            button.disabled = false;
+            this.reset();
+          }, 2000);
+        });
+
+      // Add input animation effects
+      const inputs = document.querySelectorAll("input");
+      inputs.forEach((input) => {
+        input.addEventListener("focus", function () {
+          this.parentElement.classList.add("scale-105");
+        });
+        input.addEventListener("blur", function () {
+          this.parentElement.classList.remove("scale-105");
+        });
       });
 
-      // Close dropdown when clicking outside
-      document.addEventListener("click", () => {
-        dropMenu.classList.remove("opacity-100", "visible", "scale-100");
-        dropMenu.classList.add("opacity-0", "invisible", "scale-95");
-        dropIcon.classList.remove("rotate-180");
-      });
-
-      // Prevent dropdown from closing when clicked inside
-      dropMenu.addEventListener("click", (e) => {
-        e.stopPropagation();
+      // Add button click effects
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+          this.classList.add("scale-95");
+          setTimeout(() => {
+            this.classList.remove("scale-95");
+          }, 150);
+        });
       });
 
       // Smooth scroll for anchor links
